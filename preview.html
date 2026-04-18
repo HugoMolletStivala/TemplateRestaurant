@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Vieux Moulin – Restaurant Lyon Vieux-Lyon | Cuisine Traditionnelle</title>
+  <meta name="description" content="Restaurant traditionnel à Lyon, dans le Vieux-Lyon près de la Place Bellecour. Cuisine du terroir, vins naturels. Ouvert mar-dim. ☎ 04 72 12 34 56" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Le Vieux Moulin",
+    "description": "Restaurant gastronomique au cœur de Lyon, à deux pas de la Place Bellecour.",
+    "telephone": "04 72 12 34 56",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 Rue du Bœuf",
+      "addressLocality": "Lyon",
+      "postalCode": "69005",
+      "addressCountry": "FR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": "45.7640", "longitude": "4.8296" },
+    "openingHours": ["Tu 12:00-14:30", "We 12:00-14:30", "We 19:00-22:30", "Th 12:00-14:30", "Th 19:00-22:30", "Fr 12:00-14:30", "Fr 19:00-23:00", "Sa 12:00-15:00", "Sa 19:00-23:00", "Su 12:00-15:00"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "312" },
+    "priceRange": "€€",
+    "servesCuisine": "Française"
+  }
+  </script>
+<style>
+/* ═══ VARIABLES ═══ */
+:root {
+  --c1: #1a1209; --ca: #c8922a; --ca2: #8b1a1a; --cal: #e8b96a;
+  --ct: #2c1810; --ctl: #6b5c52; --cf: #faf6f0; --cf2: #f0e8d8;
+  --cw: #ffffff; --r: 4px; --rl: 12px;
+  --sh: 0 4px 24px rgba(26,18,9,.10); --shf: 0 12px 48px rgba(26,18,9,.22);
+  --tr: .3s cubic-bezier(.4,0,.2,1);
+  --ft: 'Playfair Display',Georgia,serif;
+  --fb: 'Lato',sans-serif;
+  --fi: 'Cormorant Garamond',Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--fb);background:var(--cf);color:var(--ct);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+address{font-style:normal}
+
+/* ═══ UTILS ═══ */
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+.label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ca);margin-bottom:.75rem}
+.label--light{color:var(--cal)}
+.st{font-family:var(--ft);font-size:clamp(2rem,4vw,3rem);font-weight:700;line-height:1.2;color:var(--c1);margin-bottom:1rem}
+.st em{font-style:italic;color:var(--ca)}
+.st--light{color:var(--cw)}
+
+/* ═══ BOUTONS ═══ */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;font-family:var(--fb);font-size:.9rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:2px solid transparent;border-radius:var(--r);cursor:pointer;transition:all var(--tr)}
+.btn svg{width:18px;height:18px;flex-shrink:0}
+.btn-p{background:var(--ca);color:var(--cw);border-color:var(--ca)}
+.btn-p:hover{background:transparent;color:var(--ca)}
+.btn-s{background:transparent;color:var(--cw);border-color:rgba(255,255,255,.6)}
+.btn-s:hover{background:var(--cw);color:var(--c1)}
+.btn-g{background:transparent;color:var(--cal);border-color:var(--cal)}
+.btn-g:hover{background:var(--cal);color:var(--c1)}
+.btn-o{background:transparent;color:var(--ca);border-color:var(--ca)}
+.btn-o:hover{background:var(--ca);color:var(--cw)}
+.btn-full{width:100%;justify-content:center}
+
+/* ═══ STICKY BAR ═══ */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:1000;background:var(--c1);box-shadow:0 -4px 20px rgba(0,0,0,.3)}
+.sb{flex:1;display:flex;align-items:center;justify-content:center;gap:.4rem;padding:1rem;font-family:var(--fb);font-size:.85rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;transition:opacity var(--tr)}
+.sb svg{width:18px;height:18px}
+.sb:active{opacity:.8}
+.sb-call{background:var(--ca);color:var(--cw)}
+.sb-map{background:var(--c1);color:var(--cal);border-left:1px solid rgba(255,255,255,.1)}
+@media(max-width:768px){.sticky-bar{display:flex}body{padding-bottom:64px}}
+
+/* ═══ NAV ═══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:1.2rem 0;transition:all var(--tr)}
+.nav.scrolled{background:rgba(26,18,9,.97);backdrop-filter:blur(12px);padding:.7rem 0;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav__in{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.nav__logo-t{font-family:var(--ft);font-size:1.4rem;font-weight:700;color:var(--cw);letter-spacing:.02em}
+.nav__links{display:flex;align-items:center;gap:.25rem}
+.nav__a{font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);padding:.5rem .9rem;border-radius:var(--r);transition:all var(--tr)}
+.nav__a:hover{color:var(--cal)}
+.nav__a--cta{background:var(--ca);color:var(--cw)!important;padding:.5rem 1.2rem}
+.nav__a--cta:hover{background:var(--cal)}
+.nav__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
+.nav__burger span{display:block;width:24px;height:2px;background:var(--cw);transition:all var(--tr)}
+@media(max-width:768px){
+  .nav__burger{display:flex}
+  .nav__links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--c1);flex-direction:column;justify-content:center;align-items:center;gap:1rem;z-index:800}
+  .nav__links.open{display:flex}
+  .nav__a{font-size:1.1rem;padding:.75rem 2rem}
+  .nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav__burger.open span:nth-child(2){opacity:0}
+  .nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+
+/* ═══ HERO ═══ */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;animation:hZoom 20s ease-in-out infinite alternate}
+.hero__bg--demo{background:linear-gradient(135deg,#2d1f0e 0%,#1a1209 40%,#3d1a0a 100%)}
+@keyframes hZoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+.hero__ov{position:absolute;inset:0;background:linear-gradient(160deg,rgba(26,18,9,.75) 0%,rgba(26,18,9,.55) 40%,rgba(139,26,26,.35) 100%)}
+.hero__c{position:relative;z-index:2;text-align:center;padding:2rem;max-width:800px;animation:fUp 1.2s cubic-bezier(.4,0,.2,1) both}
+@keyframes fUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero__ey{font-size:.75rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--cal);margin-bottom:1rem}
+.hero__h1{font-family:var(--ft);font-size:clamp(3rem,8vw,6rem);font-weight:700;color:var(--cw);line-height:1.05;margin-bottom:.75rem;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.hero__sl{font-family:var(--fi);font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:300;color:rgba(255,255,255,.85);font-style:italic;margin-bottom:1rem}
+.hero__loc{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:2.5rem}
+.hero__loc svg{width:14px;height:14px}
+.hero__ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.hero__badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(8px);border-radius:100px;padding:.5rem 1.2rem}
+.bdot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px rgba(74,222,128,.6);animation:pDot 2s infinite}
+@keyframes pDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.7}}
+.btxt{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cw)}
+.hero__scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);animation:bounce 2s infinite;z-index:2}
+.hero__scroll svg{width:28px;height:28px}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ═══ INTRO ═══ */
+.intro{padding:7rem 0;background:var(--cf)}
+.intro__g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.intro__t2{font-family:var(--ft);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.2;color:var(--c1);margin-bottom:1.2rem}
+.intro__t2 em{color:var(--ca);font-style:italic}
+.intro__d{font-size:1.05rem;color:var(--ctl);line-height:1.8;margin-bottom:2rem}
+.intro__st{display:flex;align-items:center;gap:1.5rem;padding:1.5rem;background:var(--cf2);border-left:3px solid var(--ca);border-radius:var(--r)}
+.stat{text-align:center}
+.stat__n{display:block;font-family:var(--ft);font-size:2rem;font-weight:700;color:var(--ca);line-height:1}
+.stat__e{color:var(--ca);font-size:.85rem}
+.stat__l{font-size:.75rem;color:var(--ctl);letter-spacing:.05em}
+.stat__sep{width:1px;height:50px;background:rgba(26,18,9,.15)}
+.icard{display:flex;align-items:flex-start;gap:1rem;padding:1.2rem 1.5rem;background:var(--cw);border-radius:var(--rl);box-shadow:var(--sh);transition:transform var(--tr),box-shadow var(--tr);margin-bottom:1rem}
+.icard:hover{transform:translateY(-2px);box-shadow:var(--shf)}
+.icard:last-child{margin-bottom:0}
+.icard__ic{font-size:1.4rem;flex-shrink:0}
+.icard strong{display:block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ctl);margin-bottom:.2rem}
+.icard p{font-size:.95rem;color:var(--ct)}
+.icard a{color:var(--ca);font-weight:700}
+@media(max-width:900px){.intro__g{grid-template-columns:1fr;gap:3rem}.intro__st{flex-wrap:wrap;gap:1rem}}
+
+/* ═══ MENU ═══ */
+.menu-s{position:relative;padding:7rem 0;background:var(--c1);overflow:hidden}
+.menu-deco{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c8922a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.menu-s .container{position:relative}
+.menu__onglets{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.menu__tab{background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.6);padding:.6rem 1.5rem;border-radius:100px;font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all var(--tr);font-family:var(--fb)}
+.menu__tab:hover,.menu__tab.on{background:var(--ca);border-color:var(--ca);color:var(--cw)}
+.menu__plats{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;animation:fIn .4s ease}
+@keyframes fIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.plat{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1.4rem 1.8rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--rl);transition:background var(--tr)}
+.plat:hover{background:rgba(200,146,42,.1)}
+.plat__n{font-family:var(--ft);font-size:1.1rem;color:var(--cw);margin-bottom:.3rem}
+.plat__d{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.5}
+.plat__p{font-family:var(--ft);font-size:1.1rem;font-weight:700;color:var(--cal);white-space:nowrap;flex-shrink:0}
+.menu__cta{text-align:center;margin-top:3rem}
+@media(max-width:600px){.menu__plats{grid-template-columns:1fr}}
+
+/* ═══ À PROPOS ═══ */
+.ap{padding:7rem 0;background:var(--cf)}
+.ap__g{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.ap__imgs{position:relative}
+.ap__img1 img{width:100%;height:580px;object-fit:cover;border-radius:var(--rl);box-shadow:var(--shf)}
+.ap__img1--demo{width:100%;height:580px;border-radius:var(--rl);box-shadow:var(--shf);background:linear-gradient(135deg,#2d1f0e,#c8922a55,#1a1209);display:flex;align-items:center;justify-content:center;font-size:5rem}
+.ap__img2{position:absolute;bottom:-2rem;right:-2rem;width:200px;border:5px solid var(--cf);border-radius:var(--rl);box-shadow:var(--shf);overflow:hidden}
+.ap__img2 img{width:100%;height:220px;object-fit:cover}
+.ap__img2--demo{width:100%;height:220px;background:linear-gradient(135deg,#8b1a1a,#c8922a);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.ap__d{font-size:1.05rem;color:var(--ctl);line-height:1.8;margin-bottom:1rem}
+.ap__l{font-size:.95rem;color:var(--ctl);line-height:1.8;margin-bottom:2rem}
+.ap__vals{display:flex;gap:1.5rem;margin-bottom:2rem;padding:1.5rem;background:var(--cf2);border-radius:var(--rl)}
+.val{flex:1;text-align:center;font-size:.82rem;color:var(--ctl);line-height:1.5}
+.val__ic{display:block;font-size:1.8rem;margin-bottom:.5rem}
+.val__t{font-weight:600}
+@media(max-width:900px){.ap__g{grid-template-columns:1fr;gap:3rem}.ap__img1 img,.ap__img1--demo{height:350px}.ap__img2{width:140px;bottom:-1.5rem;right:-1rem}.ap__img2 img,.ap__img2--demo{height:155px}.ap__vals{flex-wrap:wrap;gap:1rem}}
+
+/* ═══ TÉMOIGNAGES ═══ */
+.temo{padding:7rem 0;background:var(--cf2)}
+.temo__g{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem}
+.tcard{background:var(--cw);border-radius:var(--rl);padding:2rem;box-shadow:var(--sh);position:relative;overflow:hidden}
+.tcard::before{content:'"';position:absolute;top:.5rem;right:1.5rem;font-family:var(--ft);font-size:6rem;color:var(--cf2);line-height:1;pointer-events:none}
+.tcard__e{color:var(--ca);font-size:1rem;margin-bottom:1rem}
+.tcard__t{font-size:.95rem;color:var(--ctl);line-height:1.7;margin-bottom:1.5rem;font-style:italic}
+.tcard__a{font-weight:700;font-size:.88rem;color:var(--ct);letter-spacing:.05em;text-transform:uppercase}
+
+/* ═══ GALERIE ═══ */
+.gal{padding:7rem 0;background:var(--cf)}
+.gal .container{margin-bottom:2.5rem}
+.gal__g{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:260px;gap:.5rem;padding:0 .5rem}
+.gal__it{overflow:hidden;cursor:pointer;position:relative}
+.gal__it:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gal__img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.gal__it:hover .gal__img{transform:scale(1.08)}
+.gal__demo{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;transition:transform .6s cubic-bezier(.4,0,.2,1)}
+.gal__it:hover .gal__demo{transform:scale(1.08)}
+.gal__ov{position:absolute;inset:0;background:rgba(26,18,9,0);display:flex;align-items:center;justify-content:center;transition:background var(--tr)}
+.gal__it:hover .gal__ov{background:rgba(26,18,9,.35)}
+.gal__ic{color:#fff;font-size:2rem;opacity:0;transition:opacity var(--tr)}
+.gal__it:hover .gal__ic{opacity:1}
+@media(max-width:768px){.gal__g{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}.gal__it:nth-child(1){grid-column:span 1;grid-row:span 1}}
+
+/* ═══ LIGHTBOX ═══ */
+.lb-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:2000}
+.lb-ov.open{display:block}
+.lb{display:none;position:fixed;inset:0;z-index:2001;align-items:center;justify-content:center;padding:2rem}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:var(--r)}
+.lb__x{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:.5rem;opacity:.7;transition:opacity var(--tr)}
+.lb__x:hover{opacity:1}
+.lb__prev,.lb__next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:50%;color:#fff;width:48px;height:48px;font-size:1.2rem;cursor:pointer;transition:background var(--tr);display:flex;align-items:center;justify-content:center}
+.lb__prev{left:1.5rem}.lb__next{right:1.5rem}
+.lb__prev:hover,.lb__next:hover{background:rgba(255,255,255,.25)}
+.lb__cap{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:.85rem;text-align:center}
+
+/* ═══ CONTACT ═══ */
+.contact{padding:7rem 0;background:var(--cf2)}
+.contact__g{display:grid;grid-template-columns:1fr 1.5fr;gap:3rem;margin-top:3rem;align-items:start}
+.contact__info{display:flex;flex-direction:column;gap:2rem}
+.contact__b h3{font-size:.75rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ctl);margin-bottom:.6rem}
+.contact__adr{line-height:1.9}
+.contact__tel{display:flex;align-items:center;gap:.5rem;font-family:var(--ft);font-size:1.8rem;font-weight:700;color:var(--ca);margin-bottom:1rem;transition:color var(--tr)}
+.contact__tel:hover{color:var(--ca2)}
+.contact__tel svg{width:22px;height:22px}
+.hor-l li{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;border-bottom:1px solid rgba(26,18,9,.08);font-size:.9rem}
+.hor-l li:last-child{border-bottom:none}
+.hor__j{font-weight:600;color:var(--ct)}
+.hor__h{color:var(--ctl)}
+.hor__f{color:#e87070;font-style:italic}
+.hor__today{background:rgba(200,146,42,.1);border-radius:var(--r);padding:.55rem .75rem!important;border-bottom:none!important}
+.hor__today .hor__j,.hor__today .hor__h{color:var(--ca);font-weight:700}
+.contact__map{height:500px;border-radius:var(--rl);overflow:hidden;box-shadow:var(--shf)}
+.contact__map iframe{border-radius:var(--rl)}
+.map-demo{width:100%;height:100%;background:linear-gradient(135deg,#e8e0d0,#d0c8b8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;border-radius:var(--rl)}
+.map-demo__ic{font-size:3rem}
+.map-demo__t{font-size:.9rem;color:var(--ctl);text-align:center;line-height:1.6}
+@media(max-width:900px){.contact__g{grid-template-columns:1fr}.contact__map{height:320px}}
+
+/* ═══ FOOTER ═══ */
+.footer{background:var(--c1);color:rgba(255,255,255,.7)}
+.footer__top{padding:4rem 0}
+.footer__g{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem}
+.footer__n{font-family:var(--ft);font-size:1.5rem;color:var(--cw);font-weight:700;margin-bottom:.3rem}
+.footer__sl{font-style:italic;font-size:.88rem;opacity:.6;margin-bottom:1.5rem}
+.footer__rs{display:flex;gap:.75rem}
+.footer__rs a{width:36px;height:36px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all var(--tr)}
+.footer__rs a:hover{background:var(--ca);border-color:var(--ca)}
+.footer__col h4{font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--cal);margin-bottom:1.2rem}
+.footer__col p,.footer__col address p{margin-bottom:.5rem;font-size:.9rem}
+.footer__col a{transition:color var(--tr)}
+.footer__col a:hover{color:var(--cal)}
+.footer__col ul{display:flex;flex-direction:column;gap:.5rem}
+.footer__col ul a{font-size:.9rem}
+.footer__h{font-size:.82rem;line-height:2}
+.footer__bot{padding:1.5rem 0;border-top:1px solid rgba(255,255,255,.08)}
+.footer__bot .container{display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
+.footer__cr{opacity:.4}
+@media(max-width:900px){.footer__g{grid-template-columns:1fr 1fr;gap:2rem}.footer__brand{grid-column:span 2}.footer__bot .container{flex-direction:column;gap:.5rem;text-align:center}}
+@media(max-width:480px){.footer__g{grid-template-columns:1fr}.footer__brand{grid-column:span 1}}
+
+/* ═══ ANIM SCROLL ═══ */
+.fu{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.fu.vis{opacity:1;transform:translateY(0)}
+.fu:nth-child(2){transition-delay:.1s}.fu:nth-child(3){transition-delay:.2s}.fu:nth-child(4){transition-delay:.3s}
+@media(max-width:768px){.btn{padding:.75rem 1.2rem;font-size:.82rem}.hero__ctas{gap:.75rem}}
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR MOBILE -->
+<div class="sticky-bar">
+  <a href="tel:0472123456" class="sb sb-call">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Appeler
+  </a>
+  <a href="https://maps.google.com" class="sb sb-map" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Itinéraire
+  </a>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav__in">
+    <a href="#accueil" style="display:flex;align-items:center;gap:.75rem">
+      <span class="nav__logo-t">Le Vieux Moulin</span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navlinks">
+      <li><a href="#menu" class="nav__a">Carte</a></li>
+      <li><a href="#apropos" class="nav__a">À propos</a></li>
+      <li><a href="#galerie" class="nav__a">Galerie</a></li>
+      <li><a href="#contact" class="nav__a">Contact</a></li>
+      <li><a href="tel:0472123456" class="nav__a nav__a--cta">☎ 04 72 12 34 56</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="accueil">
+  <div class="hero__bg hero__bg--demo">
+    <!-- En production: background-image: url('images/hero.jpg') -->
+    <div class="hero__ov"></div>
+  </div>
+  <div class="hero__c">
+    <p class="hero__ey">Restaurant & Bar</p>
+    <h1 class="hero__h1">Le Vieux Moulin</h1>
+    <p class="hero__sl">Cuisine du terroir, âme authentique</p>
+    <p class="hero__loc">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Vieux-Lyon, Lyon
+    </p>
+    <div class="hero__ctas">
+      <a href="tel:0472123456" class="btn btn-p">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Appeler
+      </a>
+      <a href="https://maps.google.com" class="btn btn-s" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
+        Itinéraire
+      </a>
+    </div>
+    <div class="hero__badge">
+      <span class="bdot" id="statut-dot"></span>
+      <span class="btxt" id="statut-txt">Ouvert maintenant</span>
+    </div>
+  </div>
+  <a href="#intro" class="hero__scroll" aria-label="Défiler">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
+</section>
+
+<!-- INTRO -->
+<section class="intro" id="intro">
+  <div class="container">
+    <div class="intro__g">
+      <div>
+        <span class="label">Notre restaurant</span>
+        <h2 class="intro__t2">Restaurant à Lyon,<br />dans le cœur du <em>Vieux-Lyon</em></h2>
+        <p class="intro__d">Restaurant gastronomique au cœur de Lyon, à deux pas de la Place Bellecour. Cuisine traditionnelle française revisitée, vins naturels et ambiance chaleureuse.</p>
+        <div class="intro__st">
+          <div class="stat"><span class="stat__n">4.7</span><div class="stat__e">★★★★★</div><span class="stat__l">sur Google</span></div>
+          <div class="stat__sep"></div>
+          <div class="stat"><span class="stat__n">312</span><span class="stat__l">avis vérifiés</span></div>
+          <div class="stat__sep"></div>
+          <div class="stat"><span class="stat__n">35+</span><span class="stat__l">ans d'histoire</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="icard">
+          <div class="icard__ic">📍</div>
+          <div><strong>Adresse</strong><p>12 Rue du Bœuf, 69005 Lyon</p></div>
+        </div>
+        <div class="icard">
+          <div class="icard__ic">📞</div>
+          <div><strong>Téléphone</strong><p><a href="tel:0472123456">04 72 12 34 56</a></p></div>
+        </div>
+        <div class="icard">
+          <div class="icard__ic">🕐</div>
+          <div><strong>Horaires</strong><p>Mar – Dim · 12h – 22h30</p></div>
+        </div>
+        <div class="icard">
+          <div class="icard__ic">🗺️</div>
+          <div><strong>Accès</strong><p>Vieux-Lyon, proche Place Bellecour</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-s" id="menu">
+  <div class="menu-deco"></div>
+  <div class="container">
+    <span class="label label--light">Notre carte</span>
+    <h2 class="st st--light">Une cuisine sincère & généreuse</h2>
+    <p style="font-size:1.05rem;color:rgba(255,255,255,.65);margin-bottom:2.5rem">Produits du terroir, recettes d'exception</p>
+    <div class="menu__onglets" id="menu-tabs"></div>
+    <div id="menu-content"></div>
+    <div class="menu__cta">
+      <a href="tel:0472123456" class="btn btn-g">Réserver par téléphone · 04 72 12 34 56</a>
+    </div>
+  </div>
+</section>
+
+<!-- À PROPOS -->
+<section class="ap" id="apropos">
+  <div class="container">
+    <div class="ap__g">
+      <div class="ap__imgs">
+        <div class="ap__img1">
+          <div class="ap__img1--demo">🍽️</div>
+        </div>
+        <div class="ap__img2">
+          <div class="ap__img2--demo">👨‍🍳</div>
+        </div>
+      </div>
+      <div>
+        <span class="label">Notre histoire</span>
+        <h2 class="st">Une table <em>vivante</em>,<br />une histoire <em>vraie</em></h2>
+        <p class="ap__d">Fondé par la famille Dupont il y a plus de 35 ans, notre établissement est devenu une institution lyonnaise. Ce qui a commencé comme un simple bouchon de quartier est aujourd'hui une adresse incontournable pour les amoureux de la cuisine authentique.</p>
+        <p class="ap__l">Depuis 1987, Le Vieux Moulin perpétue la tradition de la bonne table lyonnaise. Nichés dans le quartier historique du Vieux-Lyon, à quelques minutes à pied de la Place Bellecour et du Parc de la Tête d'Or, nous vous accueillons dans un cadre authentique avec des pierres apparentes et des poutres en chêne centenaires.</p>
+        <div class="ap__vals">
+          <div class="val"><span class="val__ic">🌾</span><span class="val__t">Produits locaux<br/>& de saison</span></div>
+          <div class="val"><span class="val__ic">🍷</span><span class="val__t">Vins naturels<br/>du Rhône</span></div>
+          <div class="val"><span class="val__ic">👨‍🍳</span><span class="val__t">Cuisine maison<br/>100% faite sur place</span></div>
+        </div>
+        <a href="tel:0472123456" class="btn btn-p">Nous appeler</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="temo" id="temoignages">
+  <div class="container">
+    <span class="label">Ce qu'ils disent</span>
+    <h2 class="st">Nos clients témoignent</h2>
+    <div class="temo__g">
+      <article class="tcard fu">
+        <div class="tcard__e">★★★★★</div>
+        <p class="tcard__t">Une adresse incontournable à Lyon ! Les quenelles sont divines et l'accueil est chaleureux. On se sent vraiment chez soi.</p>
+        <p class="tcard__a">— Marie L.</p>
+      </article>
+      <article class="tcard fu">
+        <div class="tcard__e">★★★★★</div>
+        <p class="tcard__t">Cadre magnifique dans le Vieux-Lyon. La cuisine est généreuse et authentique. Le vin recommandé par le patron était excellent.</p>
+        <p class="tcard__a">— Pierre D.</p>
+      </article>
+      <article class="tcard fu">
+        <div class="tcard__e">★★★★☆</div>
+        <p class="tcard__t">Excellent bouchon lyonnais, je recommande vivement la salade lyonnaise et l'île flottante. Rapport qualité-prix imbattable.</p>
+        <p class="tcard__a">— Sophie M.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section class="gal" id="galerie">
+  <div class="container">
+    <span class="label">Ambiance & moments</span>
+    <h2 class="st">La vie au restaurant</h2>
+  </div>
+  <div class="gal__g" id="galerie-grid"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lb-ov" id="lb-ov"></div>
+<div class="lb" id="lb">
+  <button class="lb__x" id="lb-x">✕</button>
+  <button class="lb__prev" id="lb-prev">❮</button>
+  <button class="lb__next" id="lb-next">❯</button>
+  <img id="lb-img" src="" alt="" />
+  <p class="lb__cap" id="lb-cap"></p>
+</div>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="label">Nous trouver</span>
+    <h2 class="st">Venir nous rendre visite</h2>
+    <div class="contact__g">
+      <div class="contact__info">
+        <div class="contact__b">
+          <h3>Adresse</h3>
+          <address class="contact__adr">
+            <strong>Le Vieux Moulin</strong><br />
+            12 Rue du Bœuf<br />
+            69005 Lyon<br />
+            Quartier Vieux-Lyon
+          </address>
+        </div>
+        <div class="contact__b">
+          <h3>Téléphone</h3>
+          <a href="tel:0472123456" class="contact__tel">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            04 72 12 34 56
+          </a>
+          <a href="tel:0472123456" class="btn btn-p btn-full">Appeler maintenant</a>
+        </div>
+        <div class="contact__b">
+          <h3>Horaires d'ouverture</h3>
+          <ul class="hor-l" id="horaires"></ul>
+        </div>
+        <a href="https://maps.google.com" class="btn btn-o btn-full" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
+          Obtenir l'itinéraire
+        </a>
+      </div>
+      <div class="contact__map">
+        <div class="map-demo">
+          <div class="map-demo__ic">🗺️</div>
+          <div class="map-demo__t">
+            <strong>12 Rue du Bœuf</strong><br />
+            69005 Lyon — Vieux-Lyon<br />
+            <small style="opacity:.7">Remplacer par l'iframe Google Maps</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="container">
+      <div class="footer__g">
+        <div class="footer__brand">
+          <p class="footer__n">Le Vieux Moulin</p>
+          <p class="footer__sl">Cuisine du terroir, âme authentique</p>
+          <div class="footer__rs">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="TripAdvisor">🦉</a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Informations</h4>
+          <address>
+            <p>12 Rue du Bœuf, 69005 Lyon</p>
+            <p><a href="tel:0472123456">04 72 12 34 56</a></p>
+            <p><a href="mailto:contact@levieuxmoulin-lyon.fr">contact@levieuxmoulin-lyon.fr</a></p>
+          </address>
+        </div>
+        <div class="footer__col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#menu">Notre carte</a></li>
+            <li><a href="#apropos">À propos</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#contact">Contact & Accès</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Horaires</h4>
+          <div class="footer__h" id="footer-hor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bot">
+    <div class="container">
+      <p>© 2024 Le Vieux Moulin · Lyon · Tous droits réservés</p>
+      <p class="footer__cr">Fait avec ♥ en France</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   DONNÉES (en prod : lues depuis config.json)
+═══════════════════════════════════════════ */
+const horaires = {
+  lundi:    { ouvert: false, heures: "Fermé" },
+  mardi:    { ouvert: true,  heures: "12h00 – 14h30" },
+  mercredi: { ouvert: true,  heures: "12h00 – 14h30 / 19h00 – 22h30" },
+  jeudi:    { ouvert: true,  heures: "12h00 – 14h30 / 19h00 – 22h30" },
+  vendredi: { ouvert: true,  heures: "12h00 – 14h30 / 19h00 – 23h00" },
+  samedi:   { ouvert: true,  heures: "12h00 – 15h00 / 19h00 – 23h00" },
+  dimanche: { ouvert: true,  heures: "12h00 – 15h00" }
+};
+
+const menuData = [
+  { titre:"Entrées", emoji:"🌿", plats:[
+    { nom:"Salade lyonnaise", desc:"Frisée, lardons fumés, œuf poché, croûtons à l'ail", prix:"12€" },
+    { nom:"Terrine maison", desc:"Terrine de campagne, cornichons, pain de campagne grillé", prix:"10€" },
+    { nom:"Soupe à l'oignon", desc:"Gratinée au comté, croûtons dorés", prix:"9€" }
+  ]},
+  { titre:"Plats", emoji:"🍽️", plats:[
+    { nom:"Quenelles de brochet", desc:"Sauce Nantua, riz pilaf, légumes de saison", prix:"24€" },
+    { nom:"Entrecôte grillée", desc:"Beurre maître d'hôtel, frites maison, salade verte", prix:"28€" },
+    { nom:"Poulet fermier rôti", desc:"Jus de volaille, pommes grenaille, haricots verts", prix:"22€" }
+  ]},
+  { titre:"Desserts", emoji:"🍮", plats:[
+    { nom:"Tarte Tatin", desc:"Crème fraîche épaisse, pommes caramélisées", prix:"9€" },
+    { nom:"Île flottante", desc:"Crème anglaise vanille, pralin lyonnais", prix:"8€" },
+    { nom:"Plateau de fromages", desc:"Sélection affinée, noix et miel", prix:"13€" }
+  ]},
+  { titre:"Boissons", emoji:"🍷", plats:[
+    { nom:"Vins du Rhône", desc:"Sélection de vins naturels locaux", prix:"dès 5€/verre" },
+    { nom:"Bières artisanales", desc:"Pression et bouteilles locales", prix:"dès 4€" },
+    { nom:"Cocktails maison", desc:"Créations du bar selon la saison", prix:"dès 10€" }
+  ]}
+];
+
+const photos = [
+  { emoji:"🏛️", bg:"linear-gradient(135deg,#2d1f0e,#8b5e3c)", alt:"Salle principale du restaurant à Lyon" },
+  { emoji:"🍽️", bg:"linear-gradient(135deg,#8b1a1a,#c8922a)", alt:"Assiette de quenelles de brochet" },
+  { emoji:"🍷", bg:"linear-gradient(135deg,#1a1209,#3d1a0a)", alt:"Cave à vins du restaurant" },
+  { emoji:"☀️", bg:"linear-gradient(135deg,#c8922a,#e8b96a)", alt:"Terrasse ensoleillée dans le Vieux-Lyon" },
+  { emoji:"👨‍🍳", bg:"linear-gradient(135deg,#2d1f0e,#1a1209)", alt:"Chef en cuisine" },
+  { emoji:"🕯️", bg:"linear-gradient(135deg,#3d1a0a,#8b5e3c)", alt:"Ambiance chaleureuse en soirée" }
+];
+
+/* ═══ MENU ═══ */
+const tabsEl = document.getElementById("menu-tabs");
+const contentEl = document.getElementById("menu-content");
+menuData.forEach((s, i) => {
+  const btn = document.createElement("button");
+  btn.className = "menu__tab" + (i===0?" on":"");
+  btn.innerHTML = `${s.emoji} ${s.titre}`;
+  btn.onclick = () => {
+    document.querySelectorAll(".menu__tab").forEach(b=>b.classList.remove("on"));
+    btn.classList.add("on");
+    renderPlats(s.plats);
+  };
+  tabsEl.appendChild(btn);
+});
+function renderPlats(plats) {
+  contentEl.innerHTML = `<div class="menu__plats">${plats.map(p=>`
+    <article class="plat">
+      <div><p class="plat__n">${p.nom}</p><p class="plat__d">${p.desc}</p></div>
+      <span class="plat__p">${p.prix}</span>
+    </article>`).join("")}</div>`;
+}
+renderPlats(menuData[0].plats);
+
+/* ═══ GALERIE ═══ */
+const galEl = document.getElementById("galerie-grid");
+photos.forEach((p, i) => {
+  const div = document.createElement("div");
+  div.className = "gal__it";
+  div.dataset.idx = i;
+  div.innerHTML = `<div class="gal__demo" style="background:${p.bg}">${p.emoji}</div>
+    <div class="gal__ov"><span class="gal__ic">🔍</span></div>`;
+  div.onclick = () => openLb(i);
+  galEl.appendChild(div);
+});
+
+/* ═══ LIGHTBOX ═══ */
+let lbIdx = 0;
+function openLb(i) {
+  lbIdx = i;
+  const p = photos[i];
+  const img = document.getElementById("lb-img");
+  // En production: img.src = p.src; ici on simule
+  img.src = `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23${Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0')}'/><stop offset='100%25' stop-color='%23${Math.floor(Math.random()*0xffffff).toString(16).padStart(6,'0')}'/></linearGradient></defs><rect width='600' height='400' fill='url(%23g)'/><text x='300' y='200' text-anchor='middle' dominant-baseline='middle' font-size='80'>${p.emoji}</text></svg>`;
+  img.alt = p.alt;
+  document.getElementById("lb-cap").textContent = p.alt;
+  document.getElementById("lb").classList.add("open");
+  document.getElementById("lb-ov").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeLb() {
+  document.getElementById("lb").classList.remove("open");
+  document.getElementById("lb-ov").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("lb-x").onclick = closeLb;
+document.getElementById("lb-ov").onclick = closeLb;
+document.getElementById("lb-prev").onclick = () => { lbIdx=(lbIdx-1+photos.length)%photos.length; openLb(lbIdx); };
+document.getElementById("lb-next").onclick = () => { lbIdx=(lbIdx+1)%photos.length; openLb(lbIdx); };
+document.addEventListener("keydown", e => {
+  if(e.key==="Escape") closeLb();
+  if(e.key==="ArrowLeft"){ lbIdx=(lbIdx-1+photos.length)%photos.length; openLb(lbIdx); }
+  if(e.key==="ArrowRight"){ lbIdx=(lbIdx+1)%photos.length; openLb(lbIdx); }
+});
+
+/* ═══ HORAIRES ═══ */
+const joursOrd = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
+const nomsJours = { lundi:"Lundi",mardi:"Mardi",mercredi:"Mercredi",jeudi:"Jeudi",vendredi:"Vendredi",samedi:"Samedi",dimanche:"Dimanche" };
+const jourAuj = ["dimanche","lundi","mardi","mercredi","jeudi","vendredi","samedi"][new Date().getDay()];
+
+const horListe = document.getElementById("horaires");
+joursOrd.forEach(j => {
+  const info = horaires[j];
+  const auj = j === jourAuj;
+  const li = document.createElement("li");
+  if(auj) li.className = "hor__today";
+  li.innerHTML = `<span class="hor__j">${nomsJours[j]}${auj?" 📍":""}</span>
+    <span class="${info.ouvert?"hor__h":"hor__f"}">${info.heures}</span>`;
+  horListe.appendChild(li);
+});
+
+// Footer horaires mini
+const fh = document.getElementById("footer-hor");
+const nC = { lundi:"Lun",mardi:"Mar",mercredi:"Mer",jeudi:"Jeu",vendredi:"Ven",samedi:"Sam",dimanche:"Dim" };
+fh.innerHTML = joursOrd.map(j=>`<div style="display:flex;justify-content:space-between;gap:1rem"><span>${nC[j]}</span><span style="opacity:.6">${horaires[j].heures}</span></div>`).join("");
+
+/* ═══ STATUT OUVERT/FERMÉ ═══ */
+(function() {
+  const info = horaires[jourAuj];
+  const dot = document.getElementById("statut-dot");
+  const txt = document.getElementById("statut-txt");
+  if(!info || !info.ouvert){ txt.textContent="Fermé aujourd'hui"; dot.style.background="#f87171"; dot.style.boxShadow="0 0 8px rgba(248,113,113,.6)"; dot.style.animation="none"; return; }
+  const hNow = new Date().getHours()*60+new Date().getMinutes();
+  const plages = info.heures.split("/").map(p=>p.trim());
+  let ouvert = false;
+  for(const p of plages){ const m=p.match(/(\d{2})h(\d{2})\s*[–-]\s*(\d{2})h(\d{2})/); if(m){ const d=+m[1]*60+ +m[2]; const f=+m[3]*60+ +m[4]; if(hNow>=d&&hNow<f){ouvert=true;break;} } }
+  if(ouvert){ txt.textContent="Ouvert maintenant"; }
+  else{ txt.textContent=`Aujourd'hui : ${info.heures}`; dot.style.background="#f59e0b"; dot.style.boxShadow="none"; dot.style.animation="none"; }
+})();
+
+/* ═══ NAV ═══ */
+window.addEventListener("scroll", () => document.getElementById("nav").classList.toggle("scrolled", scrollY>60), {passive:true});
+const burger = document.getElementById("burger");
+const navLinks = document.getElementById("navlinks");
+burger.onclick = () => {
+  const open = navLinks.classList.toggle("open");
+  burger.classList.toggle("open",open);
+  burger.setAttribute("aria-expanded",open);
+  document.body.style.overflow = open?"hidden":"";
+};
+navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  navLinks.classList.remove("open"); burger.classList.remove("open");
+  burger.setAttribute("aria-expanded","false"); document.body.style.overflow="";
+}));
+
+/* ═══ SCROLL ANIMATIONS ═══ */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("vis"); obs.unobserve(e.target); } });
+}, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+document.querySelectorAll(".icard,.plat,.tcard,.gal__it,.contact__b,.val").forEach(el=>{
+  el.classList.add("fu"); obs.observe(el);
+});
+</script>
+</body>
+</html>
