@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Le Vieux Moulin – Restaurant Lyon Vieux-Lyon | Cuisine Traditionnelle</title>
   <meta name="description" content="Restaurant traditionnel à Lyon, dans le Vieux-Lyon près de la Place Bellecour. Cuisine du terroir, vins naturels. Ouvert mar-dim. ☎ 04 72 12 34 56" />
+  <!-- FAVICON — remplacer par les vrais fichiers du client -->
+  <!-- Générer sur https://realfavicongenerator.net -->
+  <link rel="icon" type="image/png" sizes="32x32"   href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180"      href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml"             href="images/favicon.svg" />
+  <meta name="theme-color" content="#1a1209" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
@@ -90,6 +97,7 @@ address{font-style:normal}
 .nav__a--cta{background:var(--ca);color:var(--cw)!important;padding:.5rem 1.2rem}
 .nav__a--cta:hover{background:var(--cal)}
 .nav__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.5rem}
+.nav__logo-img{height:38px;width:auto;max-width:160px;object-fit:contain;filter:brightness(0) invert(1);transition:opacity .3s ease}
 .nav__burger span{display:block;width:24px;height:2px;background:var(--cw);transition:all var(--tr)}
 @media(max-width:768px){
   .nav__burger{display:flex}
@@ -286,7 +294,10 @@ address{font-style:normal}
 <nav class="nav" id="nav">
   <div class="nav__in">
     <a href="#accueil" style="display:flex;align-items:center;gap:.75rem">
-      <span class="nav__logo-t">Le Vieux Moulin</span>
+      <!-- Logo image avec fallback texte si images/logo.png absent -->
+      <img src="images/logo.png" alt="Logo Le Vieux Moulin" class="nav__logo-img"
+           onerror="this.style.display='none';document.getElementById('logo-txt').style.display='inline'" />
+      <span class="nav__logo-t" id="logo-txt">Le Vieux Moulin</span>
     </a>
     <button class="nav__burger" id="burger" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
