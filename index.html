@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="icon" href="favicon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -18,7 +17,7 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" id="og-title" content="" />
   <meta property="og:description" id="og-description" content="" />
-  <meta property="og:image" content="images/hero.jpeg" />
+  <meta property="og:image" content="images/hero.jpg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,6 +25,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ═══ FAVICON — remplacer les fichiers dans images/ ═══ -->
+  <!-- Générer sur https://realfavicongenerator.net à partir du logo client -->
+  <link rel="icon" type="image/png" sizes="32x32"   href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16"   href="images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180"      href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml"             href="images/favicon.svg" />
+  <link rel="manifest"                              href="images/site.webmanifest" />
+  <meta name="theme-color" content="#1a1209" id="meta-theme-color" />
+  <!-- ══════════════════════════════════════════════ -->
 
   <!-- JSON-LD Schema LocalBusiness (injecté par JS) -->
   <script id="schema-jsonld" type="application/ld+json"></script>
@@ -53,6 +62,15 @@
   <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
     <div class="nav__inner">
       <a href="#accueil" class="nav__logo" id="nav-logo">
+        <!-- Logo image (si images/logo.png existe) + fallback texte -->
+        <img
+          src="images/logo.png"
+          alt="Logo Le Vieux Moulin"
+          class="nav__logo-img"
+          id="nav-logo-img"
+          width="40" height="40"
+          onerror="this.style.display='none'; document.getElementById('nav-nom').style.display='inline';"
+        />
         <span class="nav__logo-text" id="nav-nom">Le Vieux Moulin</span>
       </a>
       <button class="nav__burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
@@ -72,7 +90,7 @@
        HERO
   ═══════════════════════════════════════════ -->
   <section class="hero" id="accueil" aria-labelledby="hero-titre">
-    <div class="hero__bg" id="hero-bg" style="background-image: url('images/hero.jpeg')">
+    <div class="hero__bg" id="hero-bg" style="background-image: url('images/hero.jpg')">
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
@@ -196,10 +214,10 @@
       <div class="apropos__grid">
         <div class="apropos__images">
           <div class="apropos__img-principal">
-            <img src="images/about.jpeg" alt="Intérieur chaleureux du restaurant Le Vieux Moulin à Lyon" id="apropos-img" loading="lazy" width="600" height="750" />
+            <img src="images/about.jpg" alt="Intérieur chaleureux du restaurant Le Vieux Moulin à Lyon" id="apropos-img" loading="lazy" width="600" height="750" />
           </div>
           <div class="apropos__img-secondaire">
-            <img src="images/about2.jpeg" alt="Chef du restaurant préparant les plats dans la cuisine" id="apropos-img2" loading="lazy" width="280" height="320" />
+            <img src="images/about2.jpg" alt="Chef du restaurant préparant les plats dans la cuisine" id="apropos-img2" loading="lazy" width="280" height="320" />
           </div>
         </div>
         <div class="apropos__texte">
