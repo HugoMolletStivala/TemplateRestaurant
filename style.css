@@ -1010,3 +1010,22 @@ address { font-style: normal; }
   .nav, .sticky-bar, .hero__scroll, .lightbox, .lightbox__overlay { display: none !important; }
   .hero { min-height: auto; padding: 2rem 0; }
 }
+
+/* ═══════════════════════════════════════════
+   LOGO NAV
+   ═══════════════════════════════════════════ */
+.nav__logo-img {
+  width: auto;
+  height: 38px;         /* Ajuster selon le logo client */
+  max-width: 160px;
+  object-fit: contain;
+  display: none;        /* Géré par app.js */
+  filter: brightness(0) invert(1); /* Rend le logo blanc sur fond sombre */
+  transition: opacity var(--tr);
+}
+
+/* Si le logo est coloré et doit garder ses couleurs, commenter la ligne filter ci-dessus */
+/* .nav__logo-img { filter: none; } */
+
+/* Quand scrolled la nav est sombre donc le logo blanc reste bien visible */
+/* Si votre logo est déjà blanc/transparent, pas de filtre nécessaire */
