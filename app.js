@@ -139,9 +139,27 @@
     if (d.couleur_texte)      root.style.setProperty("--couleur-texte", d.couleur_texte);
     if (d.couleur_fond)       root.style.setProperty("--couleur-fond", d.couleur_fond);
     if (d.couleur_fond2)      root.style.setProperty("--couleur-fond2", d.couleur_fond2);
-    // Font Google Fonts dynamique
     if (d.font_titre) root.style.setProperty("--font-titre", `'${d.font_titre}', Georgia, serif`);
     if (d.font_corps) root.style.setProperty("--font-corps", `'${d.font_corps}', sans-serif`);
+    // theme-color barre navigateur mobile
+    const metaTheme = document.getElementById("meta-theme-color");
+    if (metaTheme && d.couleur_principale) metaTheme.content = d.couleur_principale;
+    // Logo : si defini dans config on l'affiche, sinon fallback texte
+    const logoImg = document.getElementById("nav-logo-img");
+    const logoTxt = document.getElementById("nav-nom");
+    if (logoImg) {
+      if (d.logo) {
+        logoImg.src = d.logo;
+        logoImg.alt = "Logo " + restaurant.nom;
+        logoTxt.style.display = "none";
+        logoImg.style.display = "block";
+        logoImg.onload = () => { logoImg.title = restaurant.nom; };
+        logoImg.onerror = () => { logoImg.style.display = "none"; logoTxt.style.display = "inline"; };
+      } else {
+        logoImg.style.display = "none";
+        logoTxt.style.display = "inline";
+      }
+    }
   }
 
   function appliqueSEO(s, r, l) {
