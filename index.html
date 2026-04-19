@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO META (généré depuis config.json) -->
+  <title id="meta-titre">Chargement...</title>
+  <meta name="description" id="meta-description" content="" />
+  <meta name="keywords" id="meta-keywords" content="" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="fr" />
+  <link rel="canonical" id="canonical" href="" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" id="og-title" content="" />
+  <meta property="og:description" id="og-description" content="" />
+  <meta property="og:image" content="images/hero.jpeg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ═══ FAVICON — remplacer les fichiers dans images/ ═══ -->
+  <!-- Générer sur https://realfavicongenerator.net à partir du logo client -->
+  <link rel="icon" type="image/png"   href="images/favicon.png" />
+  <link rel="apple-touch-icon"        href="images/favicon.png" />
+  <meta name="theme-color" content="#1a1209" id="meta-theme-color" />
+  <!-- ══════════════════════════════════════════════ -->
+
+  <!-- JSON-LD Schema LocalBusiness (injecté par JS) -->
+  <script id="schema-jsonld" type="application/ld+json"></script>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       BARRE STICKY CTA MOBILE
+  ═══════════════════════════════════════════ -->
+  <div class="sticky-bar" id="sticky-bar">
+    <a href="tel:0615101256" class="sticky-btn sticky-call" id="sticky-tel">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Appeler
+    </a>
+    <a href="#" class="sticky-btn sticky-map" id="sticky-itineraire" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Itinéraire
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Navigation principale">
+    <div class="nav__inner">
+      <a href="#accueil" class="nav__logo" id="nav-logo">
+        <!-- Logo image (si images/logo.png existe) + fallback texte -->
+        <img
+          src="images/logo.png"
+          alt="Logo Le Vieux Moulin"
+          class="nav__logo-img"
+          id="nav-logo-img"
+          width="40" height="40"
+          onerror="this.style.display='none'; document.getElementById('nav-nom').style.display='inline';"
+        />
+        <span class="nav__logo-text" id="nav-nom">Le Vieux Moulin</span>
+      </a>
+      <button class="nav__burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#menu" class="nav__link">Carte</a></li>
+        <li><a href="#apropos" class="nav__link">À propos</a></li>
+        <li><a href="#galerie" class="nav__link">Galerie</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+        <li><a href="tel:0615101256" class="nav__link nav__link--cta" id="nav-tel">Appeler</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section class="hero" id="accueil" aria-labelledby="hero-titre">
+    <div class="hero__bg" id="hero-bg" style="background-image: url('images/hero.jpeg')">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow" id="hero-type">Restaurant & Bar</p>
+      <h1 class="hero__titre" id="hero-nom">Le Vieux Moulin</h1>
+      <p class="hero__slogan" id="hero-slogan">Cuisine du terroir, âme authentique</p>
+      <p class="hero__localisation" id="hero-localisation">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Vieux-Lyon, Lyon
+      </p>
+      <div class="hero__ctas">
+        <a href="tel:0615101256" class="btn btn--primary" id="hero-tel">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          Appeler
+        </a>
+        <a href="#" class="btn btn--secondary" id="hero-itineraire" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
+          Itinéraire
+        </a>
+      </div>
+      <div class="hero__badge" id="hero-statut-badge">
+        <span class="badge__dot"></span>
+        <span class="badge__texte" id="badge-texte">Ouvert maintenant</span>
+      </div>
+    </div>
+    <a href="#intro" class="hero__scroll" aria-label="Défiler vers le bas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       INTRO / ACCROCHE SEO
+  ═══════════════════════════════════════════ -->
+  <section class="intro" id="intro" aria-labelledby="intro-titre">
+    <div class="container">
+      <div class="intro__grid">
+        <div class="intro__texte">
+          <span class="label">Notre restaurant</span>
+          <h2 class="intro__titre" id="intro-titre">
+            Restaurant à Lyon, <br />dans le cœur du <em>Vieux-Lyon</em>
+          </h2>
+          <p class="intro__desc" id="intro-desc">
+            Restaurant gastronomique au cœur de Lyon, à deux pas de la Place Bellecour. Cuisine traditionnelle française revisitée, vins naturels et ambiance chaleureuse.
+          </p>
+          <div class="intro__stats">
+            <div class="stat">
+              <span class="stat__nb" id="stat-avis-note">4.7</span>
+              <span class="stat__etoiles">★★★★★</span>
+              <span class="stat__label">sur Google</span>
+            </div>
+            <div class="stat__sep"></div>
+            <div class="stat">
+              <span class="stat__nb" id="stat-avis-nb">312</span>
+              <span class="stat__label">avis vérifiés</span>
+            </div>
+            <div class="stat__sep"></div>
+            <div class="stat">
+              <span class="stat__nb">35+</span>
+              <span class="stat__label">ans d'histoire</span>
+            </div>
+          </div>
+        </div>
+        <div class="intro__infos-rapides">
+          <div class="info-card" id="info-adresse-card">
+            <div class="info-card__icon" aria-hidden="true">📍</div>
+            <div>
+              <strong>Adresse</strong>
+              <p id="info-adresse-texte">12 Rue du Bœuf, 69005 Lyon</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon" aria-hidden="true">📞</div>
+            <div>
+              <strong>Téléphone</strong>
+              <p><a href="tel:0615101256" id="info-tel-lien">06 15 10 12 56</a></p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon" aria-hidden="true">🕐</div>
+            <div>
+              <strong>Horaires</strong>
+              <p id="info-horaires-resume">Mar – Dim · 12h – 22h30</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-card__icon" aria-hidden="true">🗺️</div>
+            <div>
+              <strong>Accès</strong>
+              <p id="info-acces">Vieux-Lyon, proche Place Bellecour</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MENU PREVIEW
+  ═══════════════════════════════════════════ -->
+  <section class="menu-section" id="menu" aria-labelledby="menu-titre">
+    <div class="menu-section__deco" aria-hidden="true"></div>
+    <div class="container">
+      <span class="label label--light">Notre carte</span>
+      <h2 class="section-titre section-titre--light" id="menu-titre">Une cuisine sincère & généreuse</h2>
+      <p class="section-sous-titre" id="menu-sous-titre">Produits du terroir, recettes d'exception</p>
+      <div class="menu__onglets" id="menu-onglets" role="tablist" aria-label="Sections de la carte"></div>
+      <div class="menu__contenu" id="menu-contenu" role="tabpanel"></div>
+      <div class="menu__cta">
+        <a href="tel:0615101256" class="btn btn--gold" id="menu-tel-btn">
+          Réserver par téléphone · <span id="menu-tel-nb">06 15 10 12 56</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       À PROPOS
+  ═══════════════════════════════════════════ -->
+  <section class="apropos" id="apropos" aria-labelledby="apropos-titre">
+    <div class="container">
+      <div class="apropos__grid">
+        <div class="apropos__images">
+          <div class="apropos__img-principal">
+            <img src="images/about.jpeg" alt="Intérieur chaleureux du restaurant Le Vieux Moulin à Lyon" id="apropos-img" loading="lazy" width="600" height="750" />
+          </div>
+          <div class="apropos__img-secondaire">
+            <img src="images/about2.jpeg" alt="Chef du restaurant préparant les plats dans la cuisine" id="apropos-img2" loading="lazy" width="280" height="320" />
+          </div>
+        </div>
+        <div class="apropos__texte">
+          <span class="label">Notre histoire</span>
+          <h2 class="section-titre" id="apropos-titre">Une table <em>vivante</em>, une histoire <em>vraie</em></h2>
+          <p class="apropos__desc" id="apropos-histoire">
+            Fondé par la famille Dupont il y a plus de 35 ans, notre établissement est devenu une institution lyonnaise. Ce qui a commencé comme un simple bouchon de quartier est aujourd'hui une adresse incontournable pour les amoureux de la cuisine authentique.
+          </p>
+          <p class="apropos__long" id="apropos-long">
+            Depuis 1987, Le Vieux Moulin perpétue la tradition de la bonne table lyonnaise. Nichés dans le quartier historique du Vieux-Lyon, à quelques minutes à pied de la Place Bellecour et du Parc de la Tête d'Or, nous vous accueillons dans un cadre authentique avec des pierres apparentes et des poutres en chêne centenaires.
+          </p>
+          <div class="apropos__valeurs">
+            <div class="valeur">
+              <span class="valeur__icone">🌾</span>
+              <span class="valeur__texte">Produits locaux <br />& de saison</span>
+            </div>
+            <div class="valeur">
+              <span class="valeur__icone">🍷</span>
+              <span class="valeur__texte">Vins naturels <br />du Rhône</span>
+            </div>
+            <div class="valeur">
+              <span class="valeur__icone">👨‍🍳</span>
+              <span class="valeur__texte">Cuisine maison <br />100 % faite sur place</span>
+            </div>
+          </div>
+          <a href="tel:0615101256" class="btn btn--primary" id="apropos-tel">Nous appeler</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       TÉMOIGNAGES
+  ═══════════════════════════════════════════ -->
+  <section class="temoignages" id="temoignages" aria-labelledby="temoignages-titre">
+    <div class="container">
+      <span class="label">Ce qu'ils disent</span>
+      <h2 class="section-titre" id="temoignages-titre">Nos clients témoignent</h2>
+      <div class="temoignages__grille" id="temoignages-grille"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       GALERIE PHOTOS
+  ═══════════════════════════════════════════ -->
+  <section class="galerie" id="galerie" aria-labelledby="galerie-titre">
+    <div class="container">
+      <span class="label">Ambiance & moments</span>
+      <h2 class="section-titre" id="galerie-titre">La vie au restaurant</h2>
+    </div>
+    <div class="galerie__grille" id="galerie-grille"></div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       LOCALISATION + CONTACT
+  ═══════════════════════════════════════════ -->
+  <section class="contact" id="contact" aria-labelledby="contact-titre">
+    <div class="container">
+      <span class="label">Nous trouver</span>
+      <h2 class="section-titre" id="contact-titre">Venir nous rendre visite</h2>
+      <div class="contact__grid">
+
+        <!-- Infos contact -->
+        <div class="contact__infos">
+          <div class="contact__bloc">
+            <h3 class="contact__sous-titre">Adresse</h3>
+            <address class="contact__adresse" id="contact-adresse">
+              <strong id="contact-nom-resto">Le Vieux Moulin</strong><br />
+              <span id="contact-rue">12 Rue du Bœuf</span><br />
+              <span id="contact-cp-ville">69005 Lyon</span><br />
+              <span id="contact-quartier-info">Quartier Vieux-Lyon</span>
+            </address>
+          </div>
+
+          <div class="contact__bloc">
+            <h3 class="contact__sous-titre">Téléphone</h3>
+            <a href="tel:0615101256" class="contact__tel" id="contact-tel">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              06 15 10 12 56
+            </a>
+            <a href="tel:0615101256" class="btn btn--primary btn--full" id="contact-btn-appel">
+              Appeler maintenant
+            </a>
+          </div>
+
+          <div class="contact__bloc">
+            <h3 class="contact__sous-titre">Horaires d'ouverture</h3>
+            <ul class="horaires-liste" id="horaires-liste" role="list"></ul>
+          </div>
+
+          <a href="#" class="btn btn--outline btn--full" id="contact-itineraire" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 3L3 10.53v.98l6.84 2.65L12.48 21h.98L21 3z"/></svg>
+            Obtenir l'itinéraire
+          </a>
+        </div>
+
+        <!-- Carte Google Maps -->
+        <div class="contact__carte">
+          <iframe
+            id="google-maps-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.5!2d4.8296!3d45.7640!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDQ1JzUwLjQiTiA0wrA0OSc0Ni42IkU!5e0!3m2!1sfr!2sfr!4v1234567890"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localisation du restaurant sur Google Maps"
+            aria-label="Carte Google Maps de la localisation du restaurant">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col footer__col--brand">
+            <p class="footer__nom" id="footer-nom">Le Vieux Moulin</p>
+            <p class="footer__slogan" id="footer-slogan">Cuisine du terroir, âme authentique</p>
+            <div class="footer__reseaux" id="footer-reseaux"></div>
+          </div>
+          <div class="footer__col">
+            <h4>Informations</h4>
+            <address>
+              <p id="footer-adresse">12 Rue du Bœuf, 69005 Lyon</p>
+              <p><a href="tel:0615101256" id="footer-tel">06 15 10 12 56</a></p>
+              <p><a href="mailto:contact@levieuxmoulin-lyon.fr" id="footer-email">contact@levieuxmoulin-lyon.fr</a></p>
+            </address>
+          </div>
+          <div class="footer__col">
+            <h4>Navigation</h4>
+            <nav aria-label="Navigation du pied de page">
+              <ul role="list">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#menu">Notre carte</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#contact">Contact & Accès</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__col">
+            <h4>Horaires</h4>
+            <div id="footer-horaires"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p id="footer-copyright">© 2024 Le Vieux Moulin · Lyon · Tous droits réservés</p>
+        <p class="footer__credits">Fait avec ♥ en France</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox pour galerie -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vue agrandie de la photo">
+    <button class="lightbox__close" id="lightbox-close" aria-label="Fermer">✕</button>
+    <button class="lightbox__prev" id="lightbox-prev" aria-label="Photo précédente">❮</button>
+    <button class="lightbox__next" id="lightbox-next" aria-label="Photo suivante">❯</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+    <p class="lightbox__caption" id="lightbox-caption"></p>
+  </div>
+  <div class="lightbox__overlay" id="lightbox-overlay"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
