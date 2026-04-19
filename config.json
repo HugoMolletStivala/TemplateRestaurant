@@ -90,17 +90,17 @@
     "couleur_fond2": "#f0e8d8",
     "font_titre": "Playfair Display",
     "font_corps": "Lato",
-    "hero_image": "images/hero.jpg",
+    "hero_image": "images/hero.jpeg",
     "logo": "images/logo.png"
   },
 
   "photos": [
-    { "src": "images/gallery-1.jpg", "alt": "Salle principale du restaurant Le Vieux Moulin à Lyon" },
-    { "src": "images/gallery-2.jpg", "alt": "Assiette de quenelles de brochet sauce Nantua" },
-    { "src": "images/gallery-3.jpg", "alt": "Bar et cave à vins du restaurant" },
-    { "src": "images/gallery-4.jpg", "alt": "Terrasse ensoleillée dans le Vieux-Lyon" },
-    { "src": "images/gallery-5.jpg", "alt": "Chef en cuisine au Vieux Moulin Lyon" },
-    { "src": "images/gallery-6.jpg", "alt": "Ambiance chaleureuse en soirée au restaurant" }
+    { "src": "images/gallery-1.jpeg", "alt": "Salle principale du restaurant Le Vieux Moulin à Lyon" },
+    { "src": "images/gallery-2.jpeg", "alt": "Assiette de quenelles de brochet sauce Nantua" },
+    { "src": "images/gallery-3.jpeg", "alt": "Bar et cave à vins du restaurant" },
+    { "src": "images/gallery-4.jpeg", "alt": "Terrasse ensoleillée dans le Vieux-Lyon" },
+    { "src": "images/gallery-5.jpeg", "alt": "Chef en cuisine au Vieux Moulin Lyon" },
+    { "src": "images/gallery-6.jpeg", "alt": "Ambiance chaleureuse en soirée au restaurant" }
   ],
 
   "reseaux_sociaux": {
