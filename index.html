@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
+        /* ACTIVATION DU SCROLL FLUIDE */
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --primary: #c48b2d; /* Ocre/Or */
             --bg-cream: #f4eee0;
@@ -125,6 +130,7 @@
         <div class="container nav-inner">
             <div class="logo">Le Vieux Moulin</div>
             <ul class="nav-links">
+                <!-- Les liens avec # font maintenant un défilement fluide -->
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#apropos">À propos</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -320,6 +326,18 @@
     <footer style="padding:40px 0; text-align:center; border-top:1px solid rgba(0,0,0,0.05); font-size:0.9rem; opacity:0.6;">
         &copy; 2026 Le Vieux Moulin - Lyon. Tous droits réservés.
     </footer>
+
+    <!-- SCRIPT POUR FORCER LE DÉFILEMENT FLUIDE -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
