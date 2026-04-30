@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Vieux Moulin | Restaurant Lyon Vieux-Lyon</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #c48b2d; /* Ocre/Or */
+            --bg-cream: #f4eee0;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --white: #ffffff;
+            --dark-section: #14110e;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; }
+        h1, h2, h3 { font-family: var(--font-title); }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* NAVIGATION */
+        nav { position: absolute; top: 0; width: 100%; z-index: 100; padding: 30px 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; color: var(--white); }
+        .logo { font-size: 1.8rem; font-weight: 700; font-family: var(--font-title); }
+        .nav-links { display: flex; gap: 30px; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
+        .btn-nav { background: var(--primary); padding: 12px 25px; border-radius: 4px; }
+
+        /* HERO SECTION */
+        .hero { 
+            height: 100vh; 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80') center/cover;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+        }
+        .hero-content { max-width: 800px; }
+        .hero-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary); margin-bottom: 10px; display: block; font-weight: bold;}
+        .hero h1 { font-size: 6rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; font-family: var(--font-title); font-style: italic; margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 20px; justify-content: center; }
+        .btn { padding: 15px 35px; border-radius: 4px; font-weight: bold; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 2px solid white; color: white; }
+        .badge-status { margin-top: 40px; display: inline-flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.5); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); }
+        .dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; }
+
+        /* SECTION INTRO (RESTAURANT) */
+        .section-padding { padding: 100px 0; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .label { color: var(--primary); text-transform: uppercase; font-weight: bold; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+        .section-title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; }
+        .section-title em { color: var(--primary); font-style: italic; }
+        .stats-box { background: #efe6d5; padding: 40px; border-radius: 8px; display: flex; gap: 40px; margin-top: 40px; border-left: 4px solid var(--primary); }
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary); }
+        .info-cards { display: flex; flex-direction: column; gap: 15px; }
+        .info-card { background: white; padding: 25px; border-radius: 12px; display: flex; align-items: center; gap: 20px; box-shadow: var(--shadow); }
+        .info-card .icon { font-size: 1.5rem; }
+
+        /* SECTION HISTOIRE */
+        .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .history-images { position: relative; }
+        .img-large { width: 90%; border-radius: 15px; box-shadow: var(--shadow); }
+        .img-small { position: absolute; bottom: -30px; right: 0; width: 50%; border: 8px solid var(--white); border-radius: 15px; box-shadow: var(--shadow); }
+        .features-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; background: #e9e2d1; padding: 30px; border-radius: 15px; margin-top: 40px; text-align: center; }
+        .feature-item img { width: 40px; margin-bottom: 10px; }
+
+        /* SECTION CARTE (DARK) */
+        .dark-section { background-color: var(--dark-section); color: var(--white); position: relative; }
+        .dark-section::before { content: "+"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; font-size: 20px; word-spacing: 30px; line-height: 40px; overflow: hidden; }
+        .menu-tabs { display: flex; gap: 15px; margin: 40px 0; }
+        .tab { padding: 10px 25px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; cursor: pointer; }
+        .tab.active { background: var(--primary); border-color: var(--primary); }
+        .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+        .menu-item { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
+        .menu-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .menu-header h4 { font-family: var(--font-title); font-size: 1.4rem; }
+        .price { color: var(--primary); font-weight: bold; }
+        .btn-reserve { margin-top: 50px; border: 1px solid var(--primary); padding: 15px 40px; color: var(--primary); display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+
+        /* TESTIMONIALS */
+        .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .testi-card { background: white; padding: 40px; border-radius: 15px; box-shadow: var(--shadow); position: relative; }
+        .stars { color: var(--primary); margin-bottom: 20px; }
+        .quote-icon { position: absolute; top: 30px; right: 30px; opacity: 0.1; width: 30px; }
+
+        /* CONTACT & HORAIRES */
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .horaires-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .horaires-table tr { border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .horaires-table td { padding: 12px 0; }
+        .day-now { background: #efe6d5; font-weight: bold; color: var(--primary); }
+        
+        .map-placeholder { 
+            border-radius: 20px; 
+            height: 100%; 
+            min-height: 450px; 
+            overflow: hidden; 
+            box-shadow: var(--shadow); 
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        @media (max-width: 968px) {
+            .intro-grid, .history-grid, .menu-grid, .testimonial-grid, .contact-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+            .nav-links { display: none; }
+            .map-placeholder { min-height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="container nav-inner">
+            <div class="logo">Le Vieux Moulin</div>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:0615101256" class="btn-nav">Appeler pour réserver</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">Restaurant & Bar</span>
+            <h1>Le Vieux Moulin</h1>
+            <p>Cuisine du terroir, âme authentique</p>
+            <div class="hero-btns">
+                <a href="tel:0615101256" class="btn btn-primary">📞 Appeler pour réserver</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=12+Rue+du+Boeuf+69005+Lyon" target="_blank" class="btn btn-outline">📍 Itinéraire</a>
+            </div>
+            <div class="badge-status">
+                <span class="dot"></span> Ouvert maintenant
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: INTRO -->
+    <section class="section-padding container">
+        <div class="intro-grid">
+            <div>
+                <span class="label">Notre Restaurant</span>
+                <h2 class="section-title">Restaurant à Lyon, dans le cœur du <em>Vieux-Lyon</em></h2>
+                <p>Restaurant gastronomique au cœur de Lyon, à deux pas de la Place Bellecour. Cuisine traditionnelle française revisitée, vins naturels et ambiance chaleureuse.</p>
+                
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <h3>4.7</h3>
+                        <p>sur Google</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>312</h3>
+                        <p>avis vérifiés</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>35+</h3>
+                        <p>ans d'histoire</p>
+                    </div>
+                </div>
+            </div>
+            <div class="info-cards">
+                <div class="info-card">
+                    <span class="icon">📍</span>
+                    <div><strong>ADRESSE</strong><br>12 Rue du Bœuf, 69005 Lyon</div>
+                </div>
+                <div class="info-card">
+                    <span class="icon">📞</span>
+                    <div><strong>TÉLÉPHONE</strong><br><span style="color:var(--primary); font-weight:bold; font-size:1.2rem;">06 15 10 12 56</span></div>
+                </div>
+                <div class="info-card">
+                    <span class="icon">🕒</span>
+                    <div><strong>HORAIRES</strong><br>Mar - Dim • 12h - 22h30</div>
+                </div>
+                <div class="info-card">
+                    <span class="icon">🗺️</span>
+                    <div><strong>ACCÈS</strong><br>Vieux-Lyon, proche Place Bellecour</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: HISTOIRE -->
+    <section id="apropos" class="section-padding container">
+        <div class="history-grid">
+            <div class="history-images">
+                <img src="https://images.unsplash.com/photo-1550966841-3ee3ad05903b?auto=format&fit=crop&q=80" class="img-large" alt="Salle restaurant">
+                <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80" class="img-small" alt="Chefs">
+            </div>
+            <div>
+                <span class="label">Notre Histoire</span>
+                <h2 class="section-title">Une table <em>vivante</em>, une histoire <em>vraie</em></h2>
+                <p>Fondé par la famille Dupont il y a plus de 35 ans, notre établissement est devenu une institution lyonnaise. Ce qui a commencé comme un simple bouchon de quartier est aujourd'hui une adresse incontournable.</p>
+                <br>
+                <p>Depuis 1987, Le Vieux Moulin perpétue la tradition de la bonne table lyonnaise. Nichés dans le quartier historique, nous vous accueillons avec des pierres apparentes et des poutres en chêne centenaires.</p>
+                
+                <div class="features-box">
+                    <div class="feature-item">🌾<br><small>Produits locaux<br>& de saison</small></div>
+                    <div class="feature-item">🍷<br><small>Vins naturels<br>du Rhône</small></div>
+                    <div class="feature-item">👨‍🍳<br><small>Cuisine maison<br>100% sur place</small></div>
+                </div>
+                <a href="tel:0615101256" class="btn btn-primary" style="margin-top:30px">Appeler pour réserver</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MENU -->
+    <section id="menu" class="section-padding dark-section">
+        <div class="container" style="position:relative; z-index:1;">
+            <span class="label">Notre Menu</span>
+            <h2 class="section-title">Une cuisine sincère & généreuse</h2>
+            <p>Produits du terroir, recettes d'exception</p>
+
+            <div class="menu-tabs">
+                <div class="tab active">🌿 Entrées</div>
+                <div class="tab">🍽️ Plats</div>
+                <div class="tab">🍮 Desserts</div>
+                <div class="tab">🍷 Boissons</div>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Salade lyonnaise</h4>
+                        <span class="price">12€</span>
+                    </div>
+                    <p style="opacity:0.6; font-size:0.9rem;">Frisée, lardons fumés, œuf poché, croûtons à l'ail</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Terrine maison</h4>
+                        <span class="price">10€</span>
+                    </div>
+                    <p style="opacity:0.6; font-size:0.9rem;">Terrine de campagne, cornichons, pain de campagne grillé</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <h4>Soupe à l'oignon</h4>
+                        <span class="price">9€</span>
+                    </div>
+                    <p style="opacity:0.6; font-size:0.9rem;">Gratinée au comté, croûtons dorés</p>
+                </div>
+            </div>
+            <a href="tel:0615101256" class="btn btn-reserve">APPELER POUR RÉSERVER • 06 15 10 12 56</a>
+        </div>
+    </section>
+
+    <!-- SECTION 4: TEMOIGNAGES -->
+    <section class="section-padding container">
+        <span class="label">Ce qu'ils disent</span>
+        <h2 class="section-title" style="margin-bottom:50px">Nos clients témoignent</h2>
+        <div class="testimonial-grid">
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Une adresse incontournable à Lyon ! Les quenelles sont divines et l'accueil est chaleureux. On se sent vraiment chez soi."</p>
+                <p style="margin-top:20px; font-weight:bold;">— MARIE L.</p>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <p>"Cadre magnifique dans le Vieux-Lyon. La cuisine est généreuse et authentique. Le vin recommandé par le patron était excellent."</p>
+                <p style="margin-top:20px; font-weight:bold;">— PIERRE D.</p>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★☆</div>
+                <p>"Excellent bouchon lyonnais, je recommande vivement la salade lyonnaise et l'île flottante. Rapport qualité-prix imbattable."</p>
+                <p style="margin-top:20px; font-weight:bold;">— SOPHIE M.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: CONTACT -->
+    <section id="contact" class="section-padding container">
+        <h2 class="section-title">Venir nous rendre visite</h2>
+        <div class="contact-container">
+            <div>
+                <p class="label">Adresse</p>
+                <p><strong>Le Vieux Moulin</strong><br>12 Rue du Bœuf<br>69005 Lyon<br>Quartier Vieux-Lyon</p>
+                
+                <p class="label" style="margin-top:30px">Téléphone</p>
+                <p style="color:var(--primary); font-size:2rem; font-weight:bold;">📞 06 15 10 12 56</p>
+                <a href="tel:0615101256" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Appeler pour réserver</a>
+
+                <p class="label" style="margin-top:30px">Horaires d'ouverture</p>
+                <table class="horaires-table">
+                    <tr><td>Lundi</td><td style="text-align:right; color:#e74c3c;">Fermé</td></tr>
+                    <tr><td>Mardi</td><td style="text-align:right;">12h00 – 14h30</td></tr>
+                    <tr><td>Mercredi</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 22h30</td></tr>
+                    <tr class="day-now"><td>Jeudi 📍</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 22h30</td></tr>
+                    <tr><td>Vendredi</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 23h00</td></tr>
+                </table>
+            </div>
+            
+            <div class="map-placeholder">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.514494191319!2d4.825164276856!3d45.76088231360061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ebaa03a08881%3A0x6739665675c2e177!2s12%20Rue%20du%20B%C5%93uf%2C%2069005%20Lyon!5e0!3m2!1sfr!2sfr!4v1714510000000!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding:40px 0; text-align:center; border-top:1px solid rgba(0,0,0,0.05); font-size:0.9rem; opacity:0.6;">
+        &copy; 2026 Le Vieux Moulin - Lyon. Tous droits réservés.
+    </footer>
+
+</body>
+</html>
