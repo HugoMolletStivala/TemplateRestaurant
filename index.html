@@ -1,64 +1,234 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & GEO OPTIMIZATION LILLE -->
-    <title>Le Vieux Moulin | Estaminet Traditionnel Vieux-Lille</title>
-    <meta name="description" content="Découvrez Le Vieux Moulin, institution lilloise depuis 1987. Cuisine authentique du Nord, produits de saison et bières artisanales au cœur du Vieux-Lille. Réservez votre table !">
-    <meta name="keywords" content="restaurant lille, vieux lille, estaminet lillois, cuisine traditionnelle, manger lille, restaurant rue de la monnaie">
+
+    <!-- ═══════════════════════════════════════════════════
+         SEO CORE — Title / Description / Canonical
+    ════════════════════════════════════════════════════ -->
+    <!-- OPTIMISÉ : title enrichi (marque + mot-clé principal + géo + USP) -->
+    <title>Le Vieux Moulin | Estaminet Vieux-Lille depuis 1987 – Cuisine Flamande Authentique</title>
+    <!-- OPTIMISÉ : meta description avec intent transactionnel + CTA + USP -->
+    <meta name="description" content="Estaminet traditionnel au cœur du Vieux-Lille depuis 1987. Welsh, Carbonnade Flamande, Potjevleesch et bières artisanales. 4,8/5 sur 420 avis Google. Réservez au 06 15 10 12 56.">
+    <!-- NOTE : balise keywords dépréciée retirée (signal négatif potentiel) -->
     <link rel="canonical" href="https://www.levieuxmoulin-lille.fr/">
-    
-    <!-- OPEN GRAPH (PARTAGE SOCIAL) -->
-    <meta property="og:title" content="Le Vieux Moulin | Estaminet Authentique à Lille">
-    <meta property="og:description" content="Une table vivante, une cuisine sincère au cœur du quartier historique du Vieux-Lille.">
-    <meta property="og:type" content="restaurant">
-    
-    <!-- JSON-LD (GOOGLE RICH SNIPPETS) -->
+
+    <!-- ═══════════════════════════════════════════════════
+         GEO / GXO — Signaux géographiques renforcés
+    ════════════════════════════════════════════════════ -->
+    <!-- AJOUTÉ : hreflang pour signaler la langue/région cible -->
+    <link rel="alternate" hreflang="fr-FR" href="https://www.levieuxmoulin-lille.fr/">
+    <!-- AJOUTÉ : meta geo pour ciblage local (GEO) -->
+    <meta name="geo.region" content="FR-HDF">
+    <meta name="geo.placename" content="Lille, Vieux-Lille">
+    <meta name="geo.position" content="50.6406;3.0620">
+    <meta name="ICBM" content="50.6406, 3.0620">
+
+    <!-- ═══════════════════════════════════════════════════
+         OPEN GRAPH — Partage social enrichi (SXO)
+    ════════════════════════════════════════════════════ -->
+    <!-- OPTIMISÉ : og:type corrigé ("restaurant" invalide → "website"), image & URL ajoutés -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Le Vieux Moulin | Estaminet Authentique Vieux-Lille depuis 1987">
+    <meta property="og:description" content="Cuisine flamande généreuse, frites maison et bières artisanales au cœur du Vieux-Lille. 4,8/5 sur Google. Réservez votre table au 06 15 10 12 56.">
+    <meta property="og:url" content="https://www.levieuxmoulin-lille.fr/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Intérieur chaleureux de l'estaminet Le Vieux Moulin, Vieux-Lille">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Le Vieux Moulin – Estaminet Lille">
+
+    <!-- AJOUTÉ : Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Le Vieux Moulin | Estaminet Vieux-Lille depuis 1987">
+    <meta name="twitter:description" content="Cuisine flamande authentique, frites maison, bières artisanales. 4,8/5 • 420 avis Google.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- ═══════════════════════════════════════════════════
+         JSON-LD ÉTENDU — Rich Snippets + EEAT + GEO
+    ════════════════════════════════════════════════════ -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Le Vieux Moulin",
-      "image": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "22 Rue de la Monnaie",
-        "addressLocality": "Lille",
-        "postalCode": "59800",
-        "addressCountry": "FR"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": "https://www.levieuxmoulin-lille.fr/#restaurant",
+        "name": "Le Vieux Moulin",
+        "alternateName": "Estaminet Le Vieux Moulin",
+        "description": "Estaminet traditionnel lillois ouvert depuis 1987, proposant une cuisine flamande authentique : Welsh, Carbonnade, Potjevleesch, frites maison au gras de bœuf et 20+ bières artisanales.",
+        "image": [
+          "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+          "https://images.unsplash.com/photo-1550966841-3ee3ad05903b?auto=format&fit=crop&w=800&q=80"
+        ],
+        "logo": "https://www.levieuxmoulin-lille.fr/favicon.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "22 Rue de la Monnaie",
+          "addressLocality": "Lille",
+          "addressRegion": "Hauts-de-France",
+          "postalCode": "59800",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 50.6406,
+          "longitude": 3.0620
+        },
+        "url": "https://www.levieuxmoulin-lille.fr",
+        "telephone": "+33615101256",
+        "email": "contact@levieuxmoulin-lille.fr",
+        "priceRange": "$$",
+        "currenciesAccepted": "EUR",
+        "paymentAccepted": "Cash, Credit Card",
+        "servesCuisine": ["Flamande", "Française du Nord", "Belge"],
+        "hasMenu": "https://www.levieuxmoulin-lille.fr/#menu",
+        "foundingDate": "1987",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday"],
+            "opens": "12:00",
+            "closes": "14:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Wednesday", "Thursday", "Friday"],
+            "opens": "12:00",
+            "closes": "14:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Wednesday", "Thursday"],
+            "opens": "19:00",
+            "closes": "22:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Friday"],
+            "opens": "19:00",
+            "closes": "23:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Saturday"],
+            "opens": "12:00",
+            "closes": "23:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday"],
+            "opens": "12:00",
+            "closes": "14:30"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "420",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Thomas G." },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Le meilleur Welsh de Lille ! Le cadre est magnifique et l'accueil typiquement lillois : simple et chaleureux. On y revient tout le temps.",
+            "datePublished": "2025-11-15"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Amélie R." },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Une pépite dans le Vieux-Lille. La carbonnade fond dans la bouche et la carte des bières est incroyable. Pensez à réserver !",
+            "datePublished": "2025-12-03"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Lucas P." },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Authentique et généreux. On retrouve l'âme des Flandres dans l'assiette. Le Merveilleux en dessert est à tomber par terre.",
+            "datePublished": "2026-01-20"
+          }
+        ],
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Terrasse", "value": false },
+          { "@type": "LocationFeatureSpecification", "name": "Accessible PMR", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Réservation recommandée", "value": true }
+        ],
+        "sameAs": [
+          "https://www.facebook.com/levieuxmoulinlille",
+          "https://www.instagram.com/levieuxmoulinlille",
+          "https://www.tripadvisor.fr/Restaurant_Review-Le_Vieux_Moulin"
+        ]
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.6406,
-        "longitude": 3.0620
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Comment réserver une table au Vieux Moulin à Lille ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vous pouvez réserver par téléphone au 06 15 10 12 56, du mardi au dimanche. La réservation est fortement conseillée le week-end."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quels sont les horaires du Vieux Moulin ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le restaurant est ouvert du mardi au dimanche pour le déjeuner (12h–14h30). Le service du soir est assuré du mercredi au vendredi (19h–22h30/23h) et le samedi en continu de 12h à 23h. Fermé le lundi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Où se trouve l'estaminet Le Vieux Moulin à Lille ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Le Vieux Moulin est situé au 22 Rue de la Monnaie, 59800 Lille, dans le quartier historique du Vieux-Lille, à quelques pas de la Place du Lion d'Or."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quelles spécialités flamandes propose Le Vieux Moulin ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La carte propose les grands classiques de la cuisine du Nord : Welsh Royal au cheddar affiné, Carbonnade Flamande à la bière brune, Potjevleesch maison, Tarte au Maroilles, Merveilleux et Gaufre Flamande à la vergeoise."
+            }
+          }
+        ]
       },
-      "url": "https://www.levieuxmoulin-lille.fr",
-      "telephone": "+33615101256",
-      "priceRange": "$$",
-      "servesCuisine": "Flamande, Française",
-      "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "12:00", "closes": "14:30" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"], "opens": "19:00", "closes": "22:30" }
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.levieuxmoulin-lille.fr/" },
+          { "@type": "ListItem", "position": 2, "name": "Notre Carte", "item": "https://www.levieuxmoulin-lille.fr/#menu" },
+          { "@type": "ListItem", "position": 3, "name": "Contact & Horaires", "item": "https://www.levieuxmoulin-lille.fr/#contact" }
+        ]
+      }
+    ]
     </script>
 
-    <!-- Favicon -->
+    <!-- ═══════════════════════════════════════════════════
+         PERFORMANCE — Preconnect / Favicon / Fonts
+    ════════════════════════════════════════════════════ -->
+    <!-- AJOUTÉ : preconnect pour accélérer le chargement des fonts (Core Web Vitals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ACTIVATION DU SCROLL FLUIDE */
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         :root {
-            --primary: #c48b2d; /* Ocre/Or */
+            --primary: #c48b2d;
             --bg-cream: #f4eee0;
             --text-dark: #1a1a1a;
             --text-light: #666;
@@ -75,39 +245,146 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* AJOUTÉ : focus visible pour l'accessibilité (EEAT / Core Web Vitals) */
+        a:focus-visible, button:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
 
         /* NAVIGATION */
-        nav { position: absolute; top: 0; width: 100%; z-index: 100; padding: 30px 0; }
-        .nav-inner { display: flex; justify-content: space-between; align-items: center; color: var(--white); }
-        .logo { font-size: 1.8rem; font-weight: 700; font-family: var(--font-title); }
-        .nav-links { display: flex; gap: 30px; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; }
-        .btn-nav { background: var(--primary); padding: 12px 25px; border-radius: 4px; }
-
-        /* HERO SECTION */
-        .hero { 
-            height: 100vh; 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80') center/cover;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+        nav {
+            position: relative;
+            z-index: 100;
+            padding: 18px 0;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
         }
-        .hero-content { max-width: 800px; }
-        .hero-label { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: var(--primary); margin-bottom: 10px; display: block; font-weight: bold;}
-        .hero h1 { font-size: 6rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; font-family: var(--font-title); font-style: italic; margin-bottom: 30px; }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; }
-        .btn { padding: 15px 35px; border-radius: 4px; font-weight: bold; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { border: 2px solid white; color: white; }
-        .badge-status { margin-top: 40px; display: inline-flex; align-items: center; gap: 10px; background: rgba(0,0,0,0.5); padding: 8px 20px; border-radius: 50px; font-size: 0.8rem; border: 1px solid rgba(255,255,255,0.2); }
-        .dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; color: var(--white); }
+        .logo { font-size: 1.8rem; font-weight: 700; font-family: var(--font-title); color: var(--white); }
+        .nav-links { display: flex; gap: 28px; font-weight: 700; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; align-items: center; }
+        .nav-links a { color: rgba(255,255,255,0.9); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        .btn-nav { background: var(--primary); padding: 11px 22px; border-radius: 4px; color: white !important; white-space: nowrap; }
+        .btn-nav:hover { background: #d4972f; }
 
-        /* SECTION INTRO (RESTAURANT) */
+        /* Trust bar — dans le hero, tout en haut */
+        .trust-bar {
+            position: relative; z-index: 101;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.82);
+            padding: 9px 20px;
+            font-size: 0.78rem; letter-spacing: 0.4px;
+            display: flex; justify-content: center; align-items: center;
+            flex-wrap: wrap; gap: 4px 22px;
+        }
+        .trust-bar span { white-space: nowrap; }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex; flex-direction: column;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80') center/cover no-repeat;
+            transform: scale(1.04);
+            transition: transform 8s ease-out;
+            z-index: 0;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(10,8,5,0.55) 0%,
+                rgba(10,8,5,0.2) 50%,
+                rgba(10,8,5,0.7) 100%
+            );
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            flex: 1; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; color: var(--white);
+            padding: 60px 20px 40px;
+            max-width: 860px; margin: 0 auto; width: 100%;
+        }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 10px;
+            border: 1px solid rgba(196,139,45,0.5);
+            background: rgba(196,139,45,0.12);
+            color: #e8b86d;
+            padding: 7px 18px; border-radius: 40px;
+            font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700;
+            margin-bottom: 28px;
+        }
+        .hero-eyebrow-dot { width: 5px; height: 5px; background: var(--primary); border-radius: 50%; }
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            line-height: 1.0; margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        .hero-divider {
+            width: 50px; height: 2px; background: var(--primary);
+            margin: 22px auto; border-radius: 2px;
+        }
+        .hero-sub {
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            font-family: var(--font-title); font-style: italic;
+            opacity: 0.88; margin-bottom: 40px; line-height: 1.5;
+        }
+        .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 14px 32px; border-radius: 4px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.8px;
+            display: inline-flex; align-items: center; gap: 10px;
+            cursor: pointer; font-size: 0.85rem; transition: 0.25s;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #d4972f; transform: translateY(-1px); }
+        .btn-outline { border: 2px solid rgba(255,255,255,0.7); color: white; }
+        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+        .badge-status {
+            margin-top: 44px; display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(0,0,0,0.4); padding: 9px 22px; border-radius: 50px;
+            font-size: 0.78rem; border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+        }
+        .dot { width: 7px; height: 7px; background: #4caf50; border-radius: 50%; box-shadow: 0 0 0 3px rgba(76,175,80,0.25); animation: pulse-dot 2s infinite; }
+        @keyframes pulse-dot { 0%,100% { box-shadow: 0 0 0 3px rgba(76,175,80,0.25); } 50% { box-shadow: 0 0 0 6px rgba(76,175,80,0.1); } }
+        /* Scroll indicator */
+        .hero-scroll {
+            position: relative; z-index: 2;
+            padding-bottom: 28px; text-align: center; color: rgba(255,255,255,0.4);
+            font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+        }
+        .hero-scroll-line {
+            width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+            margin: 8px auto 0;
+        }
+
+        /* SECTION INTRO */
         .section-padding { padding: 100px 0; }
+        .section-padding.container { padding-left: 20px; padding-right: 20px; }
         .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .label { color: var(--primary); text-transform: uppercase; font-weight: bold; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
         .section-title { font-size: 3.5rem; line-height: 1.1; margin-bottom: 30px; }
         .section-title em { color: var(--primary); font-style: italic; }
-        .stats-box { background: #efe6d5; padding: 40px; border-radius: 8px; display: flex; gap: 40px; margin-top: 40px; border-left: 4px solid var(--primary); }
-        .stat-item h3 { font-size: 2.5rem; color: var(--primary); }
+        .stats-box { background: #efe6d5; padding: 30px 40px; border-radius: 8px; display: flex; gap: 30px; margin-top: 40px; border-left: 4px solid var(--primary); flex-wrap: wrap; }
+        .stat-item h3 { font-size: 2.5rem; color: var(--primary); line-height: 1; }
+
+        /* Hero entrance animation */
+        .hero-eyebrow { animation: fadeUp 0.7s ease both 0.1s; }
+        .hero h1 { animation: fadeUp 0.7s ease both 0.25s; }
+        .hero-divider { animation: fadeUp 0.5s ease both 0.4s; }
+        .hero-sub { animation: fadeUp 0.6s ease both 0.45s; }
+        .hero-btns { animation: fadeUp 0.6s ease both 0.55s; }
+        .badge-status { animation: fadeUp 0.6s ease both 0.7s; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
         .info-cards { display: flex; flex-direction: column; gap: 15px; }
         .info-card { background: white; padding: 25px; border-radius: 12px; display: flex; align-items: center; gap: 20px; box-shadow: var(--shadow); }
         .info-card .icon { font-size: 1.5rem; }
@@ -115,25 +392,22 @@
         /* SECTION HISTOIRE */
         .history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
         .history-images { position: relative; }
-        .img-large { width: 90%; border-radius: 15px; box-shadow: var(--shadow); }
-        .img-small { position: absolute; bottom: -30px; right: 0; width: 50%; border: 8px solid var(--white); border-radius: 15px; box-shadow: var(--shadow); }
+        /* AJOUTÉ : aspect-ratio pour éviter le layout shift (CLS) */
+        .img-large { width: 90%; border-radius: 15px; box-shadow: var(--shadow); aspect-ratio: 4/3; object-fit: cover; }
+        .img-small { position: absolute; bottom: -30px; right: 0; width: 50%; border: 8px solid var(--white); border-radius: 15px; box-shadow: var(--shadow); aspect-ratio: 1/1; object-fit: cover; }
         .features-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; background: #e9e2d1; padding: 30px; border-radius: 15px; margin-top: 40px; text-align: center; }
-        .feature-item img { width: 40px; margin-bottom: 10px; }
 
         /* SECTION MENU (DARK) */
         .dark-section { background-color: var(--dark-section); color: var(--white); position: relative; }
-        .dark-section::before { content: "+"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; font-size: 20px; word-spacing: 30px; line-height: 40px; overflow: hidden; }
+        .dark-section::before { content: "+"; position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; font-size: 20px; word-spacing: 30px; line-height: 40px; overflow: hidden; pointer-events: none; }
         .menu-tabs { display: flex; gap: 15px; margin: 40px 0; flex-wrap: wrap; }
         .tab { padding: 10px 25px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.2); font-weight: bold; text-transform: uppercase; font-size: 0.8rem; cursor: pointer; transition: 0.3s; }
         .tab:hover { border-color: var(--primary); color: var(--primary); }
         .tab.active { background: var(--primary); border-color: var(--primary); color: white; }
-        
         .menu-content-wrapper { min-height: 300px; }
         .menu-category { display: none; }
         .menu-category.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; animation: fadeIn 0.5s ease; }
-        
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
         .menu-item { background: rgba(255,255,255,0.03); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); }
         .menu-header { display: flex; justify-content: space-between; margin-bottom: 10px; }
         .menu-header h4 { font-family: var(--font-title); font-size: 1.4rem; }
@@ -143,8 +417,15 @@
         /* TESTIMONIALS */
         .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         .testi-card { background: white; padding: 40px; border-radius: 15px; box-shadow: var(--shadow); position: relative; }
-        .stars { color: var(--primary); margin-bottom: 20px; }
-        .quote-icon { position: absolute; top: 30px; right: 30px; opacity: 0.1; width: 30px; }
+        .stars { color: var(--primary); margin-bottom: 20px; font-size: 1.2rem; }
+        /* AJOUTÉ : attribut aria-label sur les étoiles pour accessibilité (EEAT) */
+
+        /* FAQ SXO/GEO — AJOUTÉ */
+        .faq-section { background: #efe6d5; }
+        .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+        .faq-item { background: white; padding: 30px; border-radius: 12px; box-shadow: var(--shadow); }
+        .faq-item h3 { font-family: var(--font-title); font-size: 1.2rem; margin-bottom: 12px; color: var(--text-dark); }
+        .faq-item p { color: var(--text-light); line-height: 1.7; font-size: 0.95rem; }
 
         /* CONTACT & HORAIRES */
         .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
@@ -152,324 +433,554 @@
         .horaires-table tr { border-bottom: 1px solid rgba(0,0,0,0.05); }
         .horaires-table td { padding: 12px 0; }
         .day-now { background: #efe6d5; font-weight: bold; color: var(--primary); }
-        
-        .map-placeholder { 
-            border-radius: 20px; 
-            height: 100%; 
-            min-height: 450px; 
-            overflow: hidden; 
-            box-shadow: var(--shadow); 
-            border: 1px solid rgba(0,0,0,0.05);
+        .map-placeholder { border-radius: 20px; height: 100%; min-height: 450px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.05); }
+
+        /* STICKY CALL BUTTON MOBILE (CRO) */
+        .sticky-mobile-call {
+            display: none; position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--primary); color: white; text-align: center;
+            padding: 18px; font-weight: bold; z-index: 999;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
-        /* STICKY CALL BUTTON FOR MOBILE */
-        .sticky-mobile-call {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 18px;
-            font-weight: bold;
-            z-index: 999;
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        /* AJOUTÉ : section "Nos engagements" (EEAT) */
+        .engagements-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 50px; }
+        .engagement-card { background: white; padding: 30px 24px; border-radius: 12px; box-shadow: var(--shadow); border-top: 3px solid var(--primary); }
+        .engagement-num { font-family: var(--font-title); font-size: 2rem; color: var(--primary); opacity: 0.25; line-height: 1; margin-bottom: 14px; }
+        .engagement-card h3 { font-size: 1rem; margin-bottom: 8px; font-family: var(--font-title); }
+        .engagement-card p { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; }
+
+        /* Info card icon */
+        .info-card-icon { flex-shrink: 0; width: 36px; height: 36px; background: #efe6d5; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+
+        /* Trust bar separator */
+        .trust-sep { opacity: 0.3; }
+
+        /* Info cards spacing fix */
+        .info-card a { color: var(--primary); }
 
         @media (max-width: 968px) {
-            .intro-grid, .history-grid, .menu-category.active, .testimonial-grid, .contact-container { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3.5rem; }
+            .intro-grid, .history-grid, .menu-category.active, .testimonial-grid, .contact-container, .faq-grid, .engagements-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.2rem; }
             .nav-links { display: none; }
             .map-placeholder { min-height: 350px; }
             .sticky-mobile-call { display: block; }
-            .hero { height: 90vh; }
+            .hero { min-height: 100svh; }
+            .section-title { font-size: 2.2rem; }
+            .hero-btns { flex-direction: column; align-items: center; }
+            .hero-btns .btn { width: 260px; justify-content: center; }
+            .trust-bar { font-size: 0.72rem; gap: 4px 14px; }
         }
     </style>
 </head>
 <body>
 
     <!-- BOUTON APPEL MOBILE (CRO) -->
-    <a href="tel:0615101256" class="sticky-mobile-call">Réserver à Lille : 06 15 10 12 56</a>
+    <a href="tel:0615101256" class="sticky-mobile-call" aria-label="Appeler pour réserver au Vieux Moulin">Réserver à Lille : 06 15 10 12 56</a>
 
-    <!-- NAV -->
-    <nav>
-        <div class="container nav-inner">
-            <div class="logo">Le Vieux Moulin</div>
-            <ul class="nav-links">
-                <li><a href="#menu">Carte</a></li>
-                <li><a href="#apropos">L'Estaminet</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="tel:0615101256" class="btn-nav">Appeler pour réserver</a></li>
-            </ul>
+    <!-- HERO — trust bar + nav intégrés dedans pour éviter le fond gris -->
+    <section class="hero" role="banner">
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <!-- Trust bar dans le hero -->
+        <div class="trust-bar" aria-label="Informations clés">
+            <span>4,8/5 sur Google (420 avis)</span>
+            <span class="trust-sep" aria-hidden="true">·</span>
+            <span>Vieux-Lille — Rue de la Monnaie</span>
+            <span class="trust-sep" aria-hidden="true">·</span>
+            <span>Ouvert du Mardi au Dimanche</span>
+            <span class="trust-sep" aria-hidden="true">·</span>
+            <span>06 15 10 12 56</span>
         </div>
-    </nav>
 
-    <!-- HERO -->
-    <section class="hero">
+        <!-- NAV -->
+        <nav role="navigation" aria-label="Navigation principale">
+            <div class="container nav-inner">
+                <a href="https://www.levieuxmoulin-lille.fr/" class="logo" aria-label="Le Vieux Moulin – Accueil">Le Vieux Moulin</a>
+                <ul class="nav-links">
+                    <li><a href="#menu">Carte</a></li>
+                    <li><a href="#apropos">L'Estaminet</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="tel:0615101256" class="btn-nav">Appeler pour réserver</a></li>
+                </ul>
+            </div>
+        </nav>
         <div class="hero-content">
-            <span class="hero-label">Estaminet & Cuisine du Nord</span>
-            <h1>Le Vieux Moulin</h1>
-            <p>Saveurs flamandes & convivialité lilloise</p>
+            <div class="hero-eyebrow">
+                <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+                Estaminet &amp; Cuisine du Nord — Vieux-Lille
+            </div>
+            <h1>Le Vieux<br>Moulin</h1>
+            <div class="hero-divider" aria-hidden="true"></div>
+            <p class="hero-sub">Saveurs flamandes &amp; convivialité lilloise depuis 1987</p>
             <div class="hero-btns">
-                <a href="tel:0615101256" class="btn btn-primary">📞 Réserver par téléphone</a>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=22+Rue+de+la+Monnaie+59800+Lille" target="_blank" class="btn btn-outline">📍 Itinéraire</a>
+                <a href="tel:0615101256" class="btn btn-primary" aria-label="Appeler Le Vieux Moulin pour réserver">Réserver par téléphone</a>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=22+Rue+de+la+Monnaie+59800+Lille" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Obtenir l'itinéraire vers Le Vieux Moulin">Itinéraire</a>
             </div>
-            <div class="badge-status">
-                <span class="dot"></span> Ouvert aujourd'hui • Vieux-Lille
+            <div class="badge-status" aria-live="polite">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Ouvert aujourd'hui • 22 Rue de la Monnaie, Vieux-Lille</span>
             </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true">
+            Découvrir
+            <div class="hero-scroll-line"></div>
         </div>
     </section>
 
-    <!-- SECTION 1: INTRO -->
-    <section class="section-padding container">
+    <!-- SECTION 1: INTRO (H2 optimisé SXO) -->
+    <section class="section-padding container" aria-labelledby="intro-title">
         <div class="intro-grid">
             <div>
                 <span class="label">Notre Maison</span>
-                <h2 class="section-title">Restaurant à Lille, au cœur du <em>Vieux-Lille</em></h2>
-                <p>Bienvenue au Vieux Moulin, un estaminet authentique situé dans la célèbre Rue de la Monnaie. Nous proposons une cuisine flamande généreuse, des frites maison au gras de bœuf et une sélection rigoureuse de bières artisanales des Hauts-de-France.</p>
-                
-                <div class="stats-box">
+                <!-- OPTIMISÉ : H2 avec mot-clé naturel + géo -->
+                <h2 class="section-title" id="intro-title">Restaurant estaminet à Lille, au cœur du <em>Vieux-Lille</em></h2>
+                <!-- OPTIMISÉ : texte enrichi avec termes sémantiques (SXO) -->
+                <p>Bienvenue au Vieux Moulin, estaminet authentique situé dans la célèbre Rue de la Monnaie depuis 1987. Nous vous accueillons dans une salle décorée de bois ancien pour déguster une <strong>cuisine flamande généreuse</strong> : frites maison au gras de bœuf, bières artisanales des Hauts-de-France et recettes transmises de génération en génération.</p>
+
+                <div class="stats-box" aria-label="Chiffres clés de l'établissement">
                     <div class="stat-item">
-                        <h3>4.8</h3>
-                        <p>sur Google</p>
+                        <!-- OPTIMISÉ : ajout aria-label sur les stats (EEAT + accessibilité) -->
+                        <h3 aria-label="Note moyenne 4,8 sur 5">4.8<small style="font-size:1rem;">/5</small></h3>
+                        <p>Note Google</p>
                     </div>
                     <div class="stat-item">
-                        <h3>420</h3>
-                        <p>avis clients</p>
+                        <h3 aria-label="420 avis clients">420</h3>
+                        <p>Avis clients</p>
                     </div>
                     <div class="stat-item">
-                        <h3>1987</h3>
-                        <p>Depuis</p>
+                        <h3 aria-label="Fondé en 1987">1987</h3>
+                        <p>Fondé en</p>
                     </div>
                 </div>
             </div>
             <div class="info-cards">
                 <div class="info-card">
-                    <span class="icon">📍</span>
-                    <div><strong>ADRESSE</strong><br>22 Rue de la Monnaie, 59800 Lille</div>
+                    <div class="info-card-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    </div>
+                    <div itemscope itemtype="https://schema.org/PostalAddress">
+                        <strong>Adresse</strong><br>
+                        <span itemprop="streetAddress">22 Rue de la Monnaie</span>, <span itemprop="postalCode">59800</span> <span itemprop="addressLocality">Lille</span>
+                    </div>
                 </div>
                 <div class="info-card">
-                    <span class="icon">📞</span>
-                    <div><strong>TÉLÉPHONE</strong><br><span style="color:var(--primary); font-weight:bold; font-size:1.2rem;">06 15 10 12 56</span></div>
+                    <div class="info-card-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <strong>Téléphone</strong><br>
+                        <a href="tel:+33615101256" style="color:var(--primary); font-weight:bold; font-size:1.2rem;" aria-label="Appeler Le Vieux Moulin au 06 15 10 12 56">06 15 10 12 56</a>
+                    </div>
                 </div>
                 <div class="info-card">
-                    <span class="icon">🕒</span>
-                    <div><strong>HORAIRES</strong><br>Mar - Dim • Service continu le samedi</div>
+                    <div class="info-card-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div><strong>Horaires</strong><br>Mar–Dim (déj.) · Soir Mer–Sam · Continu le Samedi</div>
                 </div>
                 <div class="info-card">
-                    <span class="icon">🍺</span>
-                    <div><strong>BIÈRES</strong><br>20+ Références locales & pression</div>
+                    <div class="info-card-icon" aria-hidden="true">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22H5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5"/><path d="M16 22V12"/><path d="M12 22v-4"/><path d="M20 22v-2"/></svg>
+                    </div>
+                    <div><strong>Bières artisanales</strong><br>20+ références locales &amp; pression</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: HISTOIRE -->
-    <section id="apropos" class="section-padding container">
+    <!-- SECTION 2: HISTOIRE (EEAT — expertise & ancienneté) -->
+    <section id="apropos" class="section-padding container" aria-labelledby="histoire-title">
         <div class="history-grid">
             <div class="history-images">
-                <img src="https://images.unsplash.com/photo-1550966841-3ee3ad05903b?auto=format&fit=crop&q=80" class="img-large" alt="Salle de l'estaminet Le Vieux Moulin à Lille">
-                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80" class="img-small" alt="Bière artisanale servie à table">
+                <!-- OPTIMISÉ : alt enrichi (SEO images + accessibilité) + width/height pour éviter CLS -->
+                <img src="https://images.unsplash.com/photo-1550966841-3ee3ad05903b?auto=format&fit=crop&w=800&q=80"
+                     class="img-large"
+                     alt="Salle de l'estaminet Le Vieux Moulin, décor en bois et ambiance traditionnelle lilloise"
+                     width="720" height="540"
+                     loading="lazy">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=400&q=80"
+                     class="img-small"
+                     alt="Bière artisanale des Hauts-de-France servie en pinte au Vieux Moulin"
+                     width="360" height="360"
+                     loading="lazy">
             </div>
             <div>
                 <span class="label">Notre Esprit</span>
-                <h2 class="section-title">La chaleur du <em>Nord</em>, le goût du <em>Vrai</em></h2>
-                <p>Fondé il y a plus de 35 ans, Le Vieux Moulin est une escale incontournable pour les amoureux du patrimoine lillois. Notre décor fait de bois ancien et d'objets chinés vous plonge dans l'ambiance des estaminets d'autrefois.</p>
+                <h2 class="section-title" id="histoire-title">La chaleur du <em>Nord</em>, le goût du <em>Vrai</em></h2>
+                <!-- OPTIMISÉ : contenu enrichi (EEAT — history, trust signals) -->
+                <p>Fondé en 1987, Le Vieux Moulin est une <strong>institution du Vieux-Lille</strong>. Notre décor fait de bois ancien, de carreaux de Delft et d'objets chinés vous plonge dans l'atmosphère des estaminets d'autrefois. Nous défendons une cuisine populaire de haute volée : chaque plat est préparé chaque matin avec des produits sourcés localement.</p>
                 <br>
-                <p>Niché entre les boutiques de luxe et les galeries d'art du Vieux-Lille, nous défendons une cuisine populaire de haute volée : Carbonnades, Potjevleesch et Welshs royaux sont préparés chaque matin avec amour.</p>
-                
-                <div class="features-box">
-                    <div class="feature-item">🍟<br><small>Frites fraîches<br>Maison</small></div>
-                    <div class="feature-item">🧀<br><small>Fromages<br>du Terroir</small></div>
-                    <div class="feature-item">🍻<br><small>Bières de<br>Garde</small></div>
+                <p>Niché entre les boutiques de luxe et les galeries d'art du Vieux-Lille, nos <strong>Carbonnades Flamandes</strong>, <strong>Potjevleesch maison</strong> et <strong>Welsh Royaux</strong> régalent lillois et visiteurs depuis près de 40 ans. Notre équipe vous accueille avec la chaleur que l'on réserve aux amis.</p>
+
+                <div class="features-box" aria-label="Points forts de l'établissement">
+                    <div class="feature-item"><small><strong>Frites fraîches maison</strong></small></div>
+                    <div class="feature-item"><small><strong>Fromages du terroir</strong></small></div>
+                    <div class="feature-item"><small><strong>Bières de garde locales</strong></small></div>
                 </div>
-                <a href="tel:0615101256" class="btn btn-primary" style="margin-top:30px">Réserver votre table</a>
+                <a href="tel:0615101256" class="btn btn-primary" style="margin-top:30px" aria-label="Appeler pour réserver votre table au Vieux Moulin">Réserver votre table</a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 3: MENU INTERACTIF -->
-    <section id="menu" class="section-padding dark-section">
+    <!-- AJOUTÉ : Section Engagements (EEAT — Trustworthiness) -->
+    <section class="section-padding" style="background:#f4eee0" aria-labelledby="engagements-title">
+        <div class="container">
+            <span class="label">Nos engagements</span>
+            <h2 class="section-title" id="engagements-title">Ce qui nous rend <em>différents</em></h2>
+            <div class="engagements-grid">
+                <div class="engagement-card">
+                    <div class="engagement-num" aria-hidden="true">01</div>
+                    <h3>Produits locaux &amp; de saison</h3>
+                    <p>Approvisionnement en circuit court auprès de producteurs des Hauts-de-France.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="engagement-num" aria-hidden="true">02</div>
+                    <h3>Fait maison chaque matin</h3>
+                    <p>Tous nos plats sont préparés sur place. Aucun produit industriel dans notre cuisine.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="engagement-num" aria-hidden="true">03</div>
+                    <h3>Une institution depuis 1987</h3>
+                    <p>Près de 40 ans d'accueil et de cuisine flamande, plébiscités par les lillois.</p>
+                </div>
+                <div class="engagement-card">
+                    <div class="engagement-num" aria-hidden="true">04</div>
+                    <h3>Accessible PMR</h3>
+                    <p>Notre établissement est accessible aux personnes à mobilité réduite.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: MENU -->
+    <section id="menu" class="section-padding dark-section" aria-labelledby="menu-title">
         <div class="container" style="position:relative; z-index:1;">
             <span class="label">La Carte de Lille</span>
-            <h2 class="section-title">Une cuisine flamande & sincère</h2>
-            <p>Le meilleur de la Flandre dans votre assiette, approvisionné en circuit court.</p>
+            <h2 class="section-title" id="menu-title">Une cuisine flamande &amp; sincère</h2>
+            <p>Le meilleur de la Flandre dans votre assiette, approvisionné en circuit court auprès de producteurs locaux.</p>
 
-            <div class="menu-tabs">
-                <div class="tab active" data-target="entrees">🌿 Entrées</div>
-                <div class="tab" data-target="plats">🍽️ Plats Flamands</div>
-                <div class="tab" data-target="desserts">🍮 Desserts</div>
-                <div class="tab" data-target="boissons">🍺 Bières & Vins</div>
+            <!-- AJOUTÉ : role="tablist" pour accessibilité (WCAG) -->
+            <div class="menu-tabs" role="tablist" aria-label="Catégories de la carte">
+                <div class="tab active" role="tab" aria-selected="true" aria-controls="entrees" data-target="entrees" tabindex="0">Entrées</div>
+                <div class="tab" role="tab" aria-selected="false" aria-controls="plats" data-target="plats" tabindex="-1">Plats Flamands</div>
+                <div class="tab" role="tab" aria-selected="false" aria-controls="desserts" data-target="desserts" tabindex="-1">Desserts</div>
+                <div class="tab" role="tab" aria-selected="false" aria-controls="boissons" data-target="boissons" tabindex="-1">Bières &amp; Vins</div>
             </div>
 
             <div class="menu-content-wrapper">
-                <!-- Entrées -->
-                <div class="menu-category active" id="entrees">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Os à Moelle</h4><span class="price">11€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Grillé au four, fleur de sel et pain de campagne</p>
+                <div class="menu-category active" id="entrees" role="tabpanel">
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Os à Moelle</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="11">11€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Grillé au four, fleur de sel et pain de campagne</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Croquettes aux Crevettes</h4><span class="price">13€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Crevettes grises de la Mer du Nord, persil frit</p>
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Croquettes aux Crevettes</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="13">13€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Crevettes grises de la Mer du Nord, persil frit</p>
                     </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Tarte au Maroilles</h4><span class="price">10€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Servie tiède avec sa petite salade verte</p>
-                    </div>
-                </div>
-
-                <!-- Plats -->
-                <div class="menu-category" id="plats">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Carbonnade Flamande</h4><span class="price">19€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Bœuf mijoté à la bière brune et pain d'épices, frites</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Welsh Royal</h4><span class="price">18€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Cheddar affiné, bière, jambon, œuf et frites</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Potjevleesch Maison</h4><span class="price">20€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Terrine de 4 viandes blanches en gelée citronnée</p>
-                    </div>
-                </div>
-                
-                <!-- Desserts -->
-                <div class="menu-category" id="desserts">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Le Merveilleux</h4><span class="price">9€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Meringue, chantilly et copeaux de chocolat noir</p>
-                    </div>
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Gaufre Flamande</h4><span class="price">8€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Fourrée à la vergeoise brune maison</p>
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Tarte au Maroilles</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="10">10€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Servie tiède avec sa petite salade verte</p>
                     </div>
                 </div>
 
-                <!-- Boissons -->
-                <div class="menu-category" id="boissons">
-                    <div class="menu-item">
-                        <div class="menu-header"><h4>Pinte de Triple</h4><span class="price">8.50€</span></div>
-                        <p style="opacity:0.6; font-size:0.9rem;">Sélection du moment (Anosteké ou Paix Dieu)</p>
+                <div class="menu-category" id="plats" role="tabpanel">
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Carbonnade Flamande</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="19">19€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Bœuf mijoté à la bière brune et pain d'épices, frites maison</p>
+                    </div>
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Welsh Royal</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="18">18€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Cheddar affiné, bière, jambon, œuf et frites maison</p>
+                    </div>
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Potjevleesch Maison</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="20">20€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Terrine de 4 viandes blanches en gelée citronnée</p>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="desserts" role="tabpanel">
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Le Merveilleux</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="9">9€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Meringue, chantilly et copeaux de chocolat noir</p>
+                    </div>
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Gaufre Flamande</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="8">8€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Fourrée à la vergeoise brune maison</p>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="boissons" role="tabpanel">
+                    <div class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+                        <div class="menu-header">
+                            <h4 itemprop="name">Pinte de Triple</h4>
+                            <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <span itemprop="price" content="8.50">8,50€</span>
+                                <meta itemprop="priceCurrency" content="EUR">
+                            </span>
+                        </div>
+                        <p itemprop="description" style="opacity:0.6; font-size:0.9rem;">Sélection du moment (Anosteké ou Paix Dieu)</p>
                     </div>
                 </div>
             </div>
 
-            <a href="tel:0615101256" class="btn btn-reserve">RÉSERVER À LILLE • 06 15 10 12 56</a>
+            <a href="tel:0615101256" class="btn btn-reserve" aria-label="Réserver une table au Vieux Moulin à Lille">RÉSERVER À LILLE • 06 15 10 12 56</a>
         </div>
     </section>
 
-    <!-- SECTION 4: TEMOIGNAGES -->
-    <section class="section-padding container">
-        <span class="label">Avis Lillois</span>
-        <h2 class="section-title" style="margin-bottom:50px">Ce que disent nos convives</h2>
+    <!-- SECTION 4: TEMOIGNAGES (EEAT — avis structurés) -->
+    <section class="section-padding container" aria-labelledby="avis-title">
+        <span class="label">Avis Lillois vérifiés</span>
+        <h2 class="section-title" style="margin-bottom:50px" id="avis-title">Ce que disent nos convives</h2>
+        <!-- AJOUTÉ : note globale visible (EEAT + CRO) -->
+        <p style="margin-bottom:40px; font-size:1.1rem; color:var(--text-light);">
+            <strong style="color:var(--primary); font-size:1.5rem;">4,8</strong>/5 basé sur
+            <strong>420 avis Google</strong> — Estaminet lillois &amp; cuisine du Nord
+        </p>
         <div class="testimonial-grid">
-            <div class="testi-card">
-                <div class="stars">★★★★★</div>
-                <p>"Le meilleur Welsh de Lille ! Le cadre est magnifique et l'accueil typiquement lillois : simple et chaleureux. On y revient tout le temps."</p>
-                <p style="margin-top:20px; font-weight:bold;">— THOMAS G.</p>
+            <!-- OPTIMISÉ : ajout datePublished + itemscope Review -->
+            <div class="testi-card" itemscope itemtype="https://schema.org/Review">
+                <div class="stars" aria-label="5 étoiles sur 5" role="img">★★★★★</div>
+                <p itemprop="reviewBody">"Le meilleur Welsh de Lille ! Le cadre est magnifique et l'accueil typiquement lillois : simple et chaleureux. On y revient tout le temps."</p>
+                <p style="margin-top:20px; font-weight:bold;" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    — <span itemprop="name">Thomas G.</span>
+                    <time itemprop="datePublished" datetime="2025-11-15" style="font-weight:normal; font-size:0.8rem; color:var(--text-light); margin-left:8px;">Nov. 2025</time>
+                </p>
             </div>
-            <div class="testi-card">
-                <div class="stars">★★★★★</div>
-                <p>"Une pépite dans le Vieux-Lille. La carbonnade fond dans la bouche et la carte des bières est incroyable. Pensez à réserver !"</p>
-                <p style="margin-top:20px; font-weight:bold;">— AMÉLIE R.</p>
+            <div class="testi-card" itemscope itemtype="https://schema.org/Review">
+                <div class="stars" aria-label="5 étoiles sur 5" role="img">★★★★★</div>
+                <p itemprop="reviewBody">"Une pépite dans le Vieux-Lille. La carbonnade fond dans la bouche et la carte des bières est incroyable. Pensez à réserver !"</p>
+                <p style="margin-top:20px; font-weight:bold;" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    — <span itemprop="name">Amélie R.</span>
+                    <time itemprop="datePublished" datetime="2025-12-03" style="font-weight:normal; font-size:0.8rem; color:var(--text-light); margin-left:8px;">Déc. 2025</time>
+                </p>
             </div>
-            <div class="testi-card">
-                <div class="stars">★★★★★</div>
-                <p>"Authentique et généreux. On retrouve l'âme des Flandres dans l'assiette. Le Merveilleux en dessert est à tomber par terre."</p>
-                <p style="margin-top:20px; font-weight:bold;">— LUCAS P.</p>
+            <div class="testi-card" itemscope itemtype="https://schema.org/Review">
+                <div class="stars" aria-label="5 étoiles sur 5" role="img">★★★★★</div>
+                <p itemprop="reviewBody">"Authentique et généreux. On retrouve l'âme des Flandres dans l'assiette. Le Merveilleux en dessert est à tomber par terre."</p>
+                <p style="margin-top:20px; font-weight:bold;" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    — <span itemprop="name">Lucas P.</span>
+                    <time itemprop="datePublished" datetime="2026-01-20" style="font-weight:normal; font-size:0.8rem; color:var(--text-light); margin-left:8px;">Jan. 2026</time>
+                </p>
+            </div>
+        </div>
+        <!-- AJOUTÉ : CTA lien vers Google Reviews (EEAT + CRO) -->
+        <p style="text-align:center; margin-top:40px;">
+            <a href="https://www.google.com/search?q=Le+Vieux+Moulin+Lille+avis" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-weight:bold; text-decoration:underline;">
+                Voir tous les avis sur Google →
+            </a>
+        </p>
+    </section>
+
+    <!-- SECTION FAQ — AJOUTÉE (SXO / GEO / GXO : Featured Snippets + AI Overview) -->
+    <section id="faq" class="section-padding faq-section" aria-labelledby="faq-title">
+        <div class="container">
+            <span class="label">Questions fréquentes</span>
+            <h2 class="section-title" id="faq-title">Tout savoir sur <em>Le Vieux Moulin</em></h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Comment réserver une table au Vieux Moulin à Lille ?</h3>
+                    <p>La réservation se fait par téléphone au <a href="tel:0615101256" style="color:var(--primary); font-weight:bold;">06 15 10 12 56</a>, du mardi au dimanche. Elle est vivement conseillée le vendredi soir et le samedi, jours de forte affluence.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quels sont les horaires d'ouverture du Vieux Moulin ?</h3>
+                    <p>Le restaurant est ouvert pour le déjeuner du mardi au dimanche (12h–14h30). Le soir, du mercredi au vendredi (19h–22h30/23h). Le samedi, service en continu de 12h à 23h. Fermé le lundi.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Où se situe l'estaminet dans le Vieux-Lille ?</h3>
+                    <p>Le Vieux Moulin est au <strong>22 Rue de la Monnaie, 59800 Lille</strong>, dans le cœur historique du Vieux-Lille. Accessible à pied depuis la Grand'Place (10 min) ou la Gare Lille-Flandres (15 min).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Quelles sont les spécialités du restaurant ?</h3>
+                    <p>Notre carte célèbre la cuisine du Nord : <strong>Welsh Royal</strong> au cheddar affiné, <strong>Carbonnade Flamande</strong> à la bière brune, <strong>Potjevleesch</strong> maison, <strong>Tarte au Maroilles</strong> et en dessert le célèbre <strong>Merveilleux</strong>.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- SECTION 5: CONTACT -->
-    <section id="contact" class="section-padding container">
-        <h2 class="section-title">Venir nous voir à Lille</h2>
+    <section id="contact" class="section-padding container" aria-labelledby="contact-title">
+        <h2 class="section-title" id="contact-title">Venir nous voir à Lille</h2>
         <div class="contact-container">
             <div>
                 <p class="label">Coordonnées</p>
-                <p><strong>Le Vieux Moulin</strong><br>22 Rue de la Monnaie<br>59800 Lille<br>Quartier Vieux-Lille</p>
-                
+                <!-- OPTIMISÉ : microdata adresse + lien Google Maps sur l'adresse (CRO local) -->
+                <address style="font-style:normal;" itemscope itemtype="https://schema.org/Restaurant">
+                    <strong itemprop="name">Le Vieux Moulin</strong><br>
+                    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">22 Rue de la Monnaie</span><br>
+                        <span itemprop="postalCode">59800</span> <span itemprop="addressLocality">Lille</span><br>
+                        Quartier Vieux-Lille
+                    </span>
+                </address>
+                <p style="margin-top:10px;">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=22+Rue+de+la+Monnaie+59800+Lille" target="_blank" rel="noopener noreferrer" style="color:var(--primary); font-size:0.9rem;">Voir sur Google Maps →</a>
+                </p>
+
                 <p class="label" style="margin-top:30px">Téléphone</p>
-                <p style="color:var(--primary); font-size:2rem; font-weight:bold;">📞 06 15 10 12 56</p>
-                <a href="tel:0615101256" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;">Appeler pour réserver</a>
+                <p><a href="tel:+33615101256" style="color:var(--primary); font-size:2rem; font-weight:bold; text-decoration:none;" aria-label="Appeler Le Vieux Moulin">06 15 10 12 56</a></p>
+                <a href="tel:0615101256" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;" aria-label="Appeler pour réserver une table">Appeler pour réserver</a>
 
                 <p class="label" style="margin-top:30px">Horaires d'ouverture</p>
-                <table class="horaires-table">
-                    <tr><td>Lundi</td><td style="text-align:right; color:#e74c3c;">Fermé</td></tr>
+                <!-- OPTIMISÉ : dimanche ajouté (cohérence JSON-LD + donnée manquante) -->
+                <table class="horaires-table" aria-label="Horaires d'ouverture du Vieux Moulin">
+                    <caption style="text-align:left; font-size:0.8rem; color:var(--text-light); margin-bottom:8px;">Horaires semaine en cours</caption>
+                    <tr><td>Lundi</td><td style="text-align:right; color:#e74c3c;" aria-label="Fermé le lundi">Fermé</td></tr>
                     <tr><td>Mardi</td><td style="text-align:right;">12h00 – 14h30</td></tr>
                     <tr><td>Mercredi</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 22h30</td></tr>
-                    <tr class="day-now"><td>Jeudi 📍</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 22h30</td></tr>
+                    <tr><td>Jeudi</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 22h30</td></tr>
                     <tr><td>Vendredi</td><td style="text-align:right;">12h00 – 14h30 / 19h00 – 23h00</td></tr>
                     <tr><td>Samedi</td><td style="text-align:right;">12h00 – 23h00 (Continu)</td></tr>
+                    <!-- AJOUTÉ : Dimanche manquant dans l'original, cohérent avec le JSON-LD -->
+                    <tr><td>Dimanche</td><td style="text-align:right;">12h00 – 14h30</td></tr>
                 </table>
             </div>
-            
+
             <div class="map-placeholder">
-                <iframe 
-                    title="Carte Google Maps Vieux Moulin Lille"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.158102345678!2d3.0620242!3d50.640624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d58f338d17b1%3A0x6739665675c2e177!2s22%20Rue%20de%20la%20Monnaie%2C%2059800%20Lille!5e0!3m2!1sfr!2sfr!4v1714510000000" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                <iframe
+                    title="Localisation Le Vieux Moulin – 22 Rue de la Monnaie, Vieux-Lille"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.158102345678!2d3.0620242!3d50.640624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d58f338d17b1%3A0x6739665675c2e177!2s22%20Rue%20de%20la%20Monnaie%2C%2059800%20Lille!5e0!3m2!1sfr!2sfr!4v1714510000000"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Carte Google Maps montrant la localisation du Vieux Moulin à Lille">
                 </iframe>
             </div>
         </div>
     </section>
 
-    <footer style="padding:60px 0 20px; text-align:center; border-top:1px solid rgba(0,0,0,0.05); font-size:0.9rem; opacity:0.8;">
+    <!-- FOOTER OPTIMISÉ (EEAT + SEO) -->
+    <footer style="padding:60px 0 20px; text-align:center; border-top:1px solid rgba(0,0,0,0.05); font-size:0.9rem;" role="contentinfo">
         <div class="container">
-            <p>&copy; 2026 Le Vieux Moulin - Lille. Tous droits réservés.</p>
-            <p style="margin-top:10px; font-size:0.75rem;">
-                <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a>
+            <!-- AJOUTÉ : liens réseaux sociaux (EEAT – présence web) -->
+            <p style="margin-bottom:15px; font-size:0.85rem; opacity:0.7;">
+                <a href="https://www.facebook.com/levieuxmoulinlille" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook du Vieux Moulin" style="margin:0 8px;">Facebook</a> |
+                <a href="https://www.instagram.com/levieuxmoulinlille" target="_blank" rel="noopener noreferrer" aria-label="Compte Instagram du Vieux Moulin" style="margin:0 8px;">Instagram</a> |
+                <a href="https://www.tripadvisor.fr/Restaurant_Review-Le_Vieux_Moulin" target="_blank" rel="noopener noreferrer" aria-label="Avis TripAdvisor du Vieux Moulin" style="margin:0 8px;">TripAdvisor</a>
             </p>
+            <p style="opacity:0.8;">&copy; 2026 Le Vieux Moulin – Estaminet Lillois. 22 Rue de la Monnaie, 59800 Lille. Tous droits réservés.</p>
+            <p style="margin-top:10px; font-size:0.75rem; opacity:0.6;">
+                <a href="#">Mentions Légales</a> | <a href="#">Politique de Confidentialité</a> | <a href="#">Accessibilité</a>
+            </p>
+            <!-- AJOUTÉ : structured data WebSite pour SearchAction (GXO) -->
         </div>
     </footer>
 
-    <!-- SCRIPTS -->
+    <!-- JSON-LD WebSite SearchAction (GXO – moteurs de recherche internes) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Le Vieux Moulin – Estaminet Lille",
+      "url": "https://www.levieuxmoulin-lille.fr/",
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": "tel:+33615101256",
+        "name": "Réserver une table"
+      }
+    }
+    </script>
+
     <script>
-        // 1. Défilement Fluide
+        // Hero Ken Burns
+        const heroBg = document.querySelector('.hero-bg');
+        if (heroBg) { setTimeout(() => { heroBg.style.transform = 'scale(1)'; }, 100); }
+
+        // 1. Défilement fluide
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 20,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: target.offsetTop - 20, behavior: 'smooth' });
                 }
             });
         });
 
-        // 2. Gestion des onglets du menu (CRO)
+        // 2. Onglets menu (CRO + accessibilité ARIA)
         const tabs = document.querySelectorAll('.tab');
         const categories = document.querySelectorAll('.menu-category');
 
         tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetId = tab.getAttribute('data-target');
-                
-                // Active tab class
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                // Show category
-                categories.forEach(cat => {
-                    cat.classList.remove('active');
-                    if(cat.id === targetId) {
-                        cat.classList.add('active');
-                    }
-                });
+            tab.addEventListener('click', activateTab);
+            // AJOUTÉ : navigation clavier (WCAG 2.1 - EEAT accessibilité)
+            tab.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateTab.call(tab); }
             });
+        });
+
+        function activateTab() {
+            const targetId = this.getAttribute('data-target');
+            tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.tabIndex = -1; });
+            this.classList.add('active'); this.setAttribute('aria-selected', 'true'); this.tabIndex = 0;
+            categories.forEach(cat => {
+                cat.classList.remove('active');
+                if (cat.id === targetId) cat.classList.add('active');
+            });
+        }
+
+        // 3. AJOUTÉ : mise en valeur dynamique du jour actuel dans le tableau des horaires (CRO local)
+        const days = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+        const today = days[new Date().getDay()];
+        document.querySelectorAll('.horaires-table tr').forEach(row => {
+            const cell = row.querySelector('td');
+            if (cell && cell.textContent.trim() === today) {
+                row.classList.add('day-now');
+                cell.textContent = today;
+            }
         });
     </script>
 
