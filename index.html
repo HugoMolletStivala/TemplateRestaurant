@@ -9,7 +9,7 @@
     <link rel="canonical" href="https://levieuxmoulin-lille.fr/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -447,31 +447,6 @@
             .back-to-top { bottom: 30px; right: 30px; }
         }
 
-        /* COOKIE BANNER */
-        #cookie-banner {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(14,11,8,0.97);
-            color: white;
-            padding: 20px 30px;
-            z-index: 9999;
-            border-top: 1px solid rgba(196,139,45,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-size: 0.85rem;
-        }
-        #cookie-banner.hidden { display: none; }
-        #cookie-banner p { margin: 0; opacity: 0.85; flex: 1; min-width: 200px; }
-        #cookie-banner p a { color: var(--primary); }
-        .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; flex-wrap: wrap; }
-        .cookie-accept { background: var(--primary); color: white; border: none; padding: 10px 22px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.85rem; }
-        .cookie-accept:hover { background: var(--primary-dark); }
-        .cookie-refuse { background: transparent; color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.3); padding: 10px 16px; border-radius: 4px; cursor: pointer; font-size: 0.85rem; }
-        .cookie-refuse:hover { border-color: rgba(255,255,255,0.6); color: white; }
-
         /* STATIC MENU CRAWL — dans le DOM pour crawlers, masqué visuellement */
         .menu-static-crawl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
 
@@ -522,15 +497,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Cookie banner RGPD -->
-    <div id="cookie-banner" role="dialog" aria-label="Gestion des cookies" aria-live="polite">
-        <p>Ce site utilise Google Maps et Google Fonts qui peuvent déposer des cookies. En cliquant sur « Accepter », vous consentez à leur utilisation. <a href="/politique-de-confidentialite">En savoir plus</a></p>
-        <div class="cookie-btns">
-            <button class="cookie-accept" id="cookie-accept">Accepter</button>
-            <button class="cookie-refuse" id="cookie-refuse">Refuser</button>
-        </div>
-    </div>
 
     <!-- Sticky mobile : petite icône téléphone ronde -->
     <a href="tel:0615101256" class="sticky-mobile-call" aria-label="Appeler pour réserver">📞</a>
@@ -915,14 +881,6 @@
         if(!btn)return;
         window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>400);},{passive:true});
         btn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-    })();
-    // Cookie banner RGPD
-    (function(){
-        var banner=document.getElementById('cookie-banner');
-        if(!banner)return;
-        if(localStorage.getItem('cookie-consent')){banner.classList.add('hidden');return;}
-        document.getElementById('cookie-accept').addEventListener('click',function(){localStorage.setItem('cookie-consent','accepted');banner.classList.add('hidden');});
-        document.getElementById('cookie-refuse').addEventListener('click',function(){localStorage.setItem('cookie-consent','refused');banner.classList.add('hidden');});
     })();
     (function(){
         var badge=document.querySelector('.badge-status');if(!badge)return;
