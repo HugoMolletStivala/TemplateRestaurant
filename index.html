@@ -260,6 +260,7 @@
             --page-padding: 40px;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { overflow-x: hidden; }
         body { font-family: var(--font-body); background-color: var(--bg-cream); color: var(--text-dark); line-height: 1.6; }
         h1, h2, h3, h4 { font-family: var(--font-title); }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
@@ -511,7 +512,22 @@
             .menu-category.active { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
-            .hero-btns, .booking-btns { flex-direction: column; align-items: center; }
+            /* Empile tous les groupes de boutons en colonne et prend 100% de la largeur */
+            .hero-btns, .booking-btns, .group-cta-btns { 
+                flex-direction: column; 
+                align-items: stretch; 
+                width: 100%;
+            }
+            /* Centre le texte et le contenu à l'intérieur des boutons */
+            .group-cta-btns .btn, .booking-btns .btn { 
+                width: 100%; 
+                justify-content: center; 
+                text-align: center;
+            }
+            /* Réduit le padding interne du bloc noir sur petit écran pour aérer */
+            .group-cta {
+                padding: 24px;
+            }
         }
     </style>
 </head>
